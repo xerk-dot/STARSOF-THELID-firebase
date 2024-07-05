@@ -1,4 +1,4 @@
-# Salinaka | E-commerce react app
+# STARSOF THELID | firebase react app
 react js app with firebase [typescript].
 ![Firebase Deploy](https://github.com/jgudo/ecommerce-react/workflows/Firebase%20Deploy/badge.svg)
 
