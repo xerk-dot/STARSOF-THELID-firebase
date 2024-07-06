@@ -36,7 +36,13 @@
                 "functions": "ignore"
             }
         ],
-        "no-console": 0
+        "no-console": 0,
+        "linebreak-style": ["error", "windows"],
+        "indent": "off",
+        "eol-last": "off",
+        "prefer-destructuring": "off",
+        "import/newline-after-import": "off"
+
     },
     "settings": {
         "import/resolver": {
