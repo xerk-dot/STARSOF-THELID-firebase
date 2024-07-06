@@ -43,6 +43,12 @@ $ npm run dev
 $ npm run build
 ```
 
+
+## Deploy to firebase
+```sh
+$ npx firebase deploy
+```
+
 ## How to add products or perform CRUD operations for Admin
 1. Navigate to your site to `/signup`
 2. Create an account for yourself
