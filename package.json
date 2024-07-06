@@ -14,7 +14,8 @@
     "dev": "vite",
     "build": "vite build  && cd dist && cp index.html 404.html",
     "serve": "vite preview",
-    "test": "cross-env NODE_ENV=test jest --config=jest.config.json"
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
+    "deploy": "firebase deploy"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^2.0.0",
