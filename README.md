@@ -1,6 +1,6 @@
 # STARSOF THELID | firebase react app
 react js app with firebase [typescript].
-![Firebase Deploy](https://github.com/jgudo/ecommerce-react/workflows/Firebase%20Deploy/badge.svg)
+![Firebase Deploy](https://github.com/xerk-dot/STARSOF-THELID-firebase/workflows/Firebase%20Deploy/badge.svg)
 
 <!-- ### [Live demo](https://salinaka-ecommerce.web.app/) -->
 
