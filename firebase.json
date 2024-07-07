@@ -12,7 +12,7 @@
   },
   "emulators": {
     "firestore": {
-      "port": "4000"
+      "port": "4002"
     }
   },
   "storage": {
