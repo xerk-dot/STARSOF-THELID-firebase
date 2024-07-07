@@ -4,16 +4,21 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-  ],
+  base: "/",
+  plugins: [react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
   },
+  preview: {
+    port: 8080,
+    strictPort: true,
+   },
   server: {
-    host: '0.0.0.0',
-    port: 3000
+    strictPort: true,
+    host: true,
+    port: 8080,
+    origin: "http://0.0.0.0:8080",
   }
 })

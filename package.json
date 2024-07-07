@@ -14,7 +14,8 @@
     "start": "vite",
     "dev": "vite",
     "build": "vite build  && cd dist && cp index.html 404.html",
-    "serve": "vite preview",
+    "serve_vite": "vite preview",
+    "serve": "serve -s dist",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "deploy": "firebase deploy",
     "lint": "eslint --fix --ext .js,.jsx .",
@@ -83,6 +84,7 @@
     "redux-persist": "^6.0.0",
     "redux-saga": "^1.1.3",
     "redux-thunk": "^2.3.0",
+    "serve": "^14.2.3",
     "uuid": "^8.3.2",
     "webfontloader": "^1.6.28",
     "yup": "^0.32.9"
