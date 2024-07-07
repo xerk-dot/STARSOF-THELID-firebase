@@ -37,3 +37,10 @@ CMD [ "npm", "run", "serve" ]
 
 # gcloud builds submit --tag gcr.io/starsof/starsof_firebase_0001
 # gcloud run deploy --image gcr.io/starsof/starsof_firebase_0001 --port=3000
+
+
+
+#VS Code Cloud Code, run Cloud Run locally for debug
+#To login in to gcloud for local testing:
+
+#gcloud auth application-default login

@@ -20,7 +20,8 @@
     "deploy": "firebase deploy",
     "lint": "eslint --fix --ext .js,.jsx .",
     "fire-init": "firebase init emulators",
-    "fire-emulate": "firebase emulators:start"
+    "fire-emulate": "firebase emulators:start",
+    "deploy_2":"firebase deploy --only hosting"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^2.0.0",
