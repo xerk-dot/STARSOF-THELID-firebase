@@ -1,9 +1,12 @@
 # Use the official lightweight Node.js 12 image.
 # https://hub.docker.com/_/node
-FROM node:12-slim
+FROM node:18
 
 # Create and change to the app directory.
 WORKDIR /usr/src/app
+
+#Listen on
+EXPOSE 3000
 
 # Copy application dependency manifests to the container image.
 # A wildcard is used to ensure both package.json AND package-lock.json are copied.
@@ -11,16 +14,15 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install production dependencies.
-RUN npm install --only=production
+RUN npm install --only=production --legacy-peer-deps
 
 # Copy local code to the container image.
 COPY . ./
 
-#Listen on
-ENV PORT 3000
+
 
 # Run the web service on container startup.
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "dev" ]
 
 
 #gcloud builds submit --tag gcr.io/starsof/starsof_firebase_0001
