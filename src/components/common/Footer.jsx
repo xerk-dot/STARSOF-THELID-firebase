@@ -17,7 +17,7 @@ const Footer = () => {
         <strong>
           <span>
             Developed by
-            {' '}JULIUS
+            {' '}
             <a href="https://github.com/xerk-dot">HENRY HECHT</a>
           </span>
         </strong>

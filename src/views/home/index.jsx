@@ -5,7 +5,7 @@ import { FEATURED_PRODUCTS, RECOMMENDED_PRODUCTS, SHOP } from '@/constants/route
 import {
   useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop
 } from '@/hooks';
-import bannerImg from '@/images/banner-girl-1.png';
+import bannerImg from '@/images/banner-girl.png';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -30,12 +30,13 @@ const Home = () => {
   return (
     <main className="content">
       <div className="home">
+        
         <div className="banner">
           <div className="banner-desc">
             <h1 className="text-thin">
-              <strong>See</strong>
-              &nbsp;everything with&nbsp;
-              <strong>Clarity</strong>
+              <strong>Move</strong>
+              &nbsp;fast and break&nbsp;
+              <strong>things</strong>
             </h1>
             <p>
               Buying eyewear should leave you happy and good-looking, with money in your pocket.
@@ -49,6 +50,7 @@ const Home = () => {
           </div>
           <div className="banner-img"><img src={bannerImg} alt="" /></div>
         </div>
+
         <div className="display">
           <div className="display-header">
             <h1>Featured Products</h1>
@@ -67,6 +69,7 @@ const Home = () => {
             />
           )}
         </div>
+
         <div className="display">
           <div className="display-header">
             <h1>Recommended Products</h1>
@@ -85,6 +88,7 @@ const Home = () => {
             />
           )}
         </div>
+
       </div>
     </main>
   );
