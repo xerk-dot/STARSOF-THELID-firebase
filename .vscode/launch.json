@@ -14,7 +14,7 @@
       "image": "starsof-firebase",
       "service": {
         "name": "starsof-firebase",
-        "containerPort": 8080,
+        "containerPort": 3000,
         "resources": {
           "limits": {
             "memory": "256Mi"

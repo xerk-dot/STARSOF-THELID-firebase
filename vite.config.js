@@ -12,14 +12,14 @@ export default defineConfig({
     }
   },
   preview: {
-    port: 8080,
+    port: 3000,
     strictPort: true,
    },
   server: {
     strictPort: true,
     //host: true,
     host: "0.0.0.0",
-    port: 8080,
-    origin: "http://0.0.0.0:8080",
+    port: 3000,
+    origin: "http://0.0.0.0:3000",
   }
 })

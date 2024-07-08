@@ -51,13 +51,13 @@ $ npm run fire-emulate
 # Build docker image locally
 $ docker build . -t "sample-project:v1.0"
 # Run docker image locally
-$ docker run -p 8080:8080 sample-project:v1.0
+$ docker run -p 3000:3000 sample-project:v1.0
 
 
 # Build and submit a docker image to google cloud (to artifact registry)
 $ gcloud builds submit --tag gcr.io/starsof/starsof_firebase_0001
 # Deploy the image to cloud run
-$ gcloud run deploy --image gcr.io/starsof/starsof_firebase_0001 --port=8080
+$ gcloud run deploy --image gcr.io/starsof/starsof_firebase_0001 --port=3000
 
 
 ```

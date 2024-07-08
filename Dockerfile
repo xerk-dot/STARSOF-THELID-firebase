@@ -25,18 +25,18 @@ COPY . .
 RUN npm run build
 
 #Listen on
-EXPOSE 8080
+EXPOSE 3000
 
 
 # Run the web service on container startup.
 CMD [ "npm", "run", "serve" ]
 
 # docker build . -t "sample-project:v1.0"
-# docker run -p 8080:8080 sample-project:v1.0
-# docker run -dp 8080:8080 sample-project:v1.0
+# docker run -p 3000:3000 sample-project:v1.0
+# docker run -dp 3000:3000 sample-project:v1.0
 
 # gcloud builds submit --tag gcr.io/starsof/starsof_firebase_0001
-# gcloud run deploy --image gcr.io/starsof/starsof_firebase_0001 --port=8080
+# gcloud run deploy --image gcr.io/starsof/starsof_firebase_0001 --port=3000
 
 
 
