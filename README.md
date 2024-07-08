@@ -1,10 +1,12 @@
 # STARSOF THELID | firebase react app
-react js app with firebase [typescript].
-![Firebase Deploy](https://github.com/xerk-dot/STARSOF-THELID-firebase/workflows/Firebase%20Deploy/badge.svg)
+## So: what is this?
+This is a react js app with firebase (for auth, firestore, storage), deployed on Cloud Run.
+
 
 <!-- ### [Live demo](https://salinaka-ecommerce.web.app/) -->
 
-## Run Locally
+## How do I run it local?
+
 ### 1. Install Dependencies
 ```sh
 $ npm install
@@ -31,22 +33,33 @@ VITE_FIREBASE_APP_ID=234598789798798fg3-034
 After setting up necessary configuration,
 create a **Database** and choose **Cloud Firestore** and start in test mode
 
-### 3. Run development server
+### 3. Commands
 ```sh 
+# run the development server
 $ npm run dev
-```
 
----
-
-## Build the project
-```sh
+# build the project with vite
 $ npm run build
-```
+
+# deploy to firebase (to cloud)
+$ npm run deploy
+
+# run firebase emulators (runs local)
+$ npm run fire-emulate
 
 
-## Deploy to firebase
-```sh
-$ npx firebase deploy
+# Build docker image locally
+$ docker build . -t "sample-project:v1.0"
+# Run docker image locally
+$ docker run -p 8080:8080 sample-project:v1.0
+
+
+# Build and submit a docker image to google cloud (to artifact registry)
+$ gcloud builds submit --tag gcr.io/starsof/starsof_firebase_0001
+# Deploy the image to cloud run
+$ gcloud run deploy --image gcr.io/starsof/starsof_firebase_0001 --port=8080
+
+
 ```
 
 ## How to add products or perform CRUD operations for Admin
@@ -64,3 +77,14 @@ $ npx firebase deploy
 * Firebase auth provider authentication
 * Account creation and edit
 
+
+
+
+
+
+
+
+#VS Code Cloud Code, run Cloud Run locally for debug
+#To login in to gcloud for local testing:
+
+#gcloud auth application-default login
