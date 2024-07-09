@@ -6,11 +6,20 @@ import {
   useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop
 } from '@/hooks';
 import bannerImg from '@/images/banner-girl.png';
-import React from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
+import {useState} from 'react';
+import {createRoot} from 'react-dom/client';
+import Map from 'react-map-gl';
+import ControlPanel from './control-panel';
+
+const MAPBOX_TOKEN = 'pk.eyJ1IjoicnlrciIsImEiOiJjbHhjcWxiaDYwZmhrMnFvYWtlbDRlNzFzIn0.u3zAq2Ye9gGAzmkqijKMyQ'; // Set your mapbox token here
 
 
 const Home = () => {
+
+  const [mapStyle, setMapStyle] = useState(null);
+
   useDocumentTitle('STARSOF THELID map');
   useScrollTop();
 
@@ -30,7 +39,8 @@ const Home = () => {
   return (
     <main className="content">
       <div className="home">
-        
+      
+
         <div className="banner">
           <div className="banner-desc">
             <h1 className="text-thin">
@@ -48,7 +58,25 @@ const Home = () => {
               <ArrowRightOutlined />
             </Link>
           </div>
-          <div className="banner-img"><img src={bannerImg} alt="" /></div>
+
+          <div>
+
+          
+          <Map
+            initialViewState={{
+              latitude: 37.805,
+              longitude: -122.447,
+              zoom: 15.5
+            }}
+            mapStyle={mapStyle && mapStyle.toJS()}
+            styleDiffing
+            mapboxAccessToken={MAPBOX_TOKEN}
+          />
+          </div>
+          <div className="map-control-panel">
+          <ControlPanel onChange={setMapStyle} />
+          </div>
+
         </div>
 
         <div className="display">
