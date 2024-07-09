@@ -21,7 +21,7 @@
     "lint": "eslint --fix --ext .js,.jsx .",
     "fire-init": "firebase init emulators",
     "fire-emulate": "firebase emulators:start",
-    "deploy_2":"firebase deploy --only hosting"
+    "deploy_2": "firebase deploy --only hosting"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^2.0.0",
@@ -69,6 +69,7 @@
     "firebase-tools": "^13.13.0",
     "formik": "^2.2.6",
     "history": "^4.10.0",
+    "mapbox-gl": "^3.5.1",
     "moment": "^2.29.1",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
@@ -76,6 +77,7 @@
     "react-compound-slider": "^3.3.1",
     "react-dom": "^17.0.2",
     "react-loading-skeleton": "^2.2.0",
+    "react-map-gl": "^7.1.7",
     "react-modal": "^3.13.1",
     "react-phone-input-2": "^2.14.0",
     "react-redux": "^7.2.4",
