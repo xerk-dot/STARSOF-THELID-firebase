@@ -14,13 +14,13 @@
     "start": "vite",
     "dev": "vite",
     "build": "vite build  && cd dist && cp index.html 404.html",
-    "serve_vite": "vite preview",
-    "serve": "serve -s dist",
+    "serve": "vite preview",
+    "serve_serve": "serve -s dist",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
-    "deploy": "firebase deploy",
     "lint": "eslint --fix --ext .js,.jsx .",
     "fire-init": "firebase init emulators",
     "fire-emulate": "firebase emulators:start",
+    "deploy_firebase_all": "firebase deploy",
     "deploy_firebase_hosting_only": "firebase deploy --only hosting"
   },
   "devDependencies": {
