@@ -18,10 +18,12 @@
     "serve_serve": "serve -s dist",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "lint": "eslint --fix --ext .js,.jsx .",
+
+    "fire-login": "firebase login",
     "fire-init": "firebase init emulators",
     "fire-emulate": "firebase emulators:start",
-    "deploy_firebase_all": "firebase deploy",
-    "deploy_firebase_hosting_only": "firebase deploy --only hosting"
+    "deploy_fire_all": "firebase deploy",
+    "deploy_fire_hosting-only": "firebase deploy --only hosting"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^2.0.0",
