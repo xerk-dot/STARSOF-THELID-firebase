@@ -8,13 +8,7 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [ {
-      "source": "/helloworld",
-      "run": {
-        "serviceId": "starsof-thelid-firebase"    
-      }
-    } ]
+    ]
   },
   "emulators": {
     "firestore": {
