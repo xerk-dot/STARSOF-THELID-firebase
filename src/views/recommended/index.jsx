@@ -18,14 +18,6 @@ const RecommendedProducts = () => {
   return (
     <main className="content">
       <div className="featured">
-        <div className="banner">
-          <div className="banner-desc">
-            <h1>Recommended Events</h1>
-          </div>
-          <div className="banner-img">
-            <img src={bannerImg} alt="" />
-          </div>
-        </div>
         <div className="display">
           <div className="product-display-grid">
             {(error && !isLoading) ? (
