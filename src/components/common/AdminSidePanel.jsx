@@ -11,7 +11,7 @@ const SideNavigation = () => (
           className="sidenavigation-menu"
           to={ADMIN_PRODUCTS}
         >
-          Events
+          Products
         </NavLink>
       </div>
       <div className="sidenavigation-item">

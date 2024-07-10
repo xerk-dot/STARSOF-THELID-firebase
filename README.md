@@ -2,9 +2,6 @@
 ## So: what is this?
 This is a react js app with firebase (for auth, firestore, storage), deployed on Cloud Run.
 
-
-<!-- ### [Live demo](https://salinaka-ecommerce.web.app/) -->
-
 ## How do I run it local?
 
 ### 1. Install Dependencies

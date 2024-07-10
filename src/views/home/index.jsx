@@ -5,22 +5,12 @@ import { FEATURED_PRODUCTS, RECOMMENDED_PRODUCTS, SHOP } from '@/constants/route
 import {
   useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop
 } from '@/hooks';
-import bannerImg from '@/images/banner-girl.png';
-import * as React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import {useState} from 'react';
-import {createRoot} from 'react-dom/client';
-import Map from 'react-map-gl';
-import ControlPanel from './control-panel';
-
-const MAPBOX_TOKEN = 'pk.eyJ1IjoicnlrciIsImEiOiJjbHhjcWxiaDYwZmhrMnFvYWtlbDRlNzFzIn0.u3zAq2Ye9gGAzmkqijKMyQ'; // Set your mapbox token here
 
 
 const Home = () => {
-
-  const [mapStyle, setMapStyle] = useState(null);
-
-  useDocumentTitle('STARSOF THELID map');
+  useDocumentTitle('STARSOF THELID | Home');
   useScrollTop();
 
   const {
@@ -39,49 +29,23 @@ const Home = () => {
   return (
     <main className="content">
       <div className="home">
-      
-
         <div className="banner">
           <div className="banner-desc">
             <h1 className="text-thin">
-              <strong>Move</strong>
-              &nbsp;fast and break&nbsp;
-              <strong>things</strong>
+              <strong>Move fast</strong>
+              &nbsp;and break things&nbsp;
+              <strong>like holes</strong>
             </h1>
-            <p>
-              Buying eyewear should leave you happy and good-looking, with money in your pocket.
-              Glasses, sunglasses, and contacts—we’ve got your eyes covered.
-            </p>
             <br />
             <Link to={SHOP} className="button">
               Shop Now &nbsp;
               <ArrowRightOutlined />
             </Link>
           </div>
-
-          <div>
-
-          
-          <Map
-            initialViewState={{
-              latitude: 37.805,
-              longitude: -122.447,
-              zoom: 15.5
-            }}
-            mapStyle={mapStyle && mapStyle.toJS()}
-            styleDiffing
-            mapboxAccessToken={MAPBOX_TOKEN}
-          />
-          </div>
-          <div className="map-control-panel">
-          <ControlPanel onChange={setMapStyle} />
-          </div>
-
         </div>
-
         <div className="display">
           <div className="display-header">
-            <h1>Featured Events</h1>
+            <h1>Featured Products</h1>
             <Link to={FEATURED_PRODUCTS}>See All</Link>
           </div>
           {(errorFeatured && !isLoadingFeatured) ? (
@@ -97,7 +61,6 @@ const Home = () => {
             />
           )}
         </div>
-
         <div className="display">
           <div className="display-header">
             <h1>Recommended Products</h1>
@@ -116,7 +79,6 @@ const Home = () => {
             />
           )}
         </div>
-
       </div>
     </main>
   );

@@ -5,7 +5,7 @@ import bannerImg from '@/images/banner-girl-1.png';
 import React from 'react';
 
 const RecommendedProducts = () => {
-  useDocumentTitle('Recommended Events | STARSOF THELID');
+  useDocumentTitle('Recommended Products | Starsof');
   useScrollTop();
 
   const {
@@ -20,7 +20,7 @@ const RecommendedProducts = () => {
       <div className="featured">
         <div className="banner">
           <div className="banner-desc">
-            <h1>Recommended Events</h1>
+            <h1>Recommended Products</h1>
           </div>
           <div className="banner-img">
             <img src={bannerImg} alt="" />
