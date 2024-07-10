@@ -5,14 +5,18 @@ import { FEATURED_PRODUCTS, RECOMMENDED_PRODUCTS, SHOP } from '@/constants/route
 import {
   useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop
 } from '@/hooks';
-import React from 'react';
 import { Link } from 'react-router-dom';
+import * as React from 'react';
+import {useState} from 'react';
+import Map from 'react-map-gl';
+import ControlPanel from './control-panel';
 
+const MAPBOX_TOKEN = 'pk.eyJ1IjoicnlrciIsImEiOiJjbHhjcWxiaDYwZmhrMnFvYWtlbDRlNzFzIn0.u3zAq2Ye9gGAzmkqijKMyQ'; // Set your mapbox token here
 
 const Home = () => {
   useDocumentTitle('STARSOF THELID | Home');
   useScrollTop();
-
+  const [mapStyle, setMapStyle] = useState(null);
   const {
     featuredProducts,
     fetchFeaturedProducts,
@@ -29,6 +33,22 @@ const Home = () => {
   return (
     <main className="content">
       <div className="home">
+      <div className="map">
+        <Map
+          initialViewState={{
+            latitude: 37.805,
+            longitude: -122.447,
+            zoom: 15.5
+          }}
+          mapStyle={mapStyle && mapStyle.toJS()}
+          styleDiffing
+          mapboxAccessToken={MAPBOX_TOKEN}
+        />
+      </div>
+      <div className="map-control-panel map-label">
+        <ControlPanel onChange={setMapStyle} />
+      </div>
+
         <div className="banner">
           <div className="banner-desc">
             <h1 className="text-thin">
