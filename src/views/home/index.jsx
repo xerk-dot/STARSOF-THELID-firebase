@@ -36,11 +36,12 @@ const Home = () => {
       <div className="map">
         <Map
           initialViewState={{
-            latitude: 37.805,
+            latitude: 37.759,
             longitude: -122.447,
-            zoom: 15.5
+            zoom: 12
           }}
           mapStyle={mapStyle && mapStyle.toJS()}
+          style={{width: 2000, height: 1000}}
           styleDiffing
           mapboxAccessToken={MAPBOX_TOKEN}
         />
@@ -65,7 +66,7 @@ const Home = () => {
         </div>
         <div className="display">
           <div className="display-header">
-            <h1>Featured Products</h1>
+            <h1>Featured Events</h1>
             <Link to={FEATURED_PRODUCTS}>See All</Link>
           </div>
           {(errorFeatured && !isLoadingFeatured) ? (
@@ -83,7 +84,7 @@ const Home = () => {
         </div>
         <div className="display">
           <div className="display-header">
-            <h1>Recommended Products</h1>
+            <h1>Recommended Events</h1>
             <Link to={RECOMMENDED_PRODUCTS}>See All</Link>
           </div>
           {(errorRecommended && !isLoadingRecommended) ? (

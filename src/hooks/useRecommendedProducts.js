@@ -17,7 +17,7 @@ const useRecommendedProducts = (itemsCount) => {
 
       if (docs.empty) {
         if (didMount) {
-          setError('No recommended products found.');
+          setError('No recommended events found.');
           setLoading(false);
         }
       } else {
@@ -35,7 +35,7 @@ const useRecommendedProducts = (itemsCount) => {
       }
     } catch (e) {
       if (didMount) {
-        setError('Failed to fetch recommended products');
+        setError('Failed to fetch recommended events');
         setLoading(false);
       }
     }
