@@ -3,6 +3,7 @@ import PropType from 'prop-types';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { signInWithFacebook, signInWithGithub, signInWithGoogle } from '@/redux/actions/authActions';
+import { AwesomeButtonShare } from "react-awesome-button";
 
 const SocialLogin = ({ isLoading }) => {
   const dispatch = useDispatch();
@@ -48,6 +49,11 @@ const SocialLogin = ({ isLoading }) => {
       >
         <GithubFilled />
         Continue with GitHub
+
+        <AwesomeButtonShare type="github" href="https://github.com/username">GitHub</AwesomeButtonShare>
+        <AwesomeButtonShare type="instagram" href="https://linkedin.com/username">Instagram</AwesomeButtonShare>
+        <AwesomeButtonShare type="twitter">Twitter</AwesomeButtonShare>
+
       </button>
     </div>
   );

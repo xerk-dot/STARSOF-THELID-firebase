@@ -13,6 +13,8 @@ import Badge from './Badge';
 import FiltersToggle from './FiltersToggle';
 import MobileNavigation from './MobileNavigation';
 import SearchBar from './SearchBar';
+import { AwesomeButton } from 'react-awesome-button';
+import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss';
 
 const Navigation = () => {
   const navbar = useRef(null);
@@ -110,23 +112,22 @@ const Navigation = () => {
           </li>
         ) : (
           <li className="navigation-action">
+
             {pathname !== ROUTE.SIGNUP && (
-              <Link
-                className="button button-small"
-                onClick={onClickLink}
-                to={ROUTE.SIGNUP}
-              >
+              <AwesomeButton
+                cssModule={AwesomeButtonStyles}
+                type="primary"
+                href={ROUTE.SIGNUP}>
                 Sign Up
-              </Link>
+              </AwesomeButton>
             )}
             {pathname !== ROUTE.SIGNIN && (
-              <Link
-                className="button button-small button-muted margin-left-s"
-                onClick={onClickLink}
-                to={ROUTE.SIGNIN}
-              >
-                Sign In
-              </Link>
+              <AwesomeButton
+              cssModule={AwesomeButtonStyles}
+              type="secondary"
+              href={ROUTE.SIGNIN}>
+              Sign In
+            </AwesomeButton>
             )}
           </li>
         )}
