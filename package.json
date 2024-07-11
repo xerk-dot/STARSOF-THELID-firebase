@@ -66,6 +66,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
+    "@motionone/utils": "^10.18.0",
     "babel-eslint": "^10.1.0",
     "firebase": "^8.4.3",
     "firebase-admin": "^12.2.0",
@@ -76,6 +77,8 @@
     "history": "^4.10.0",
     "immutable": "^4.0.0",
     "moment": "^2.29.1",
+    "next": "13.4.7",
+    "next-themes": "^0.2.1",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",

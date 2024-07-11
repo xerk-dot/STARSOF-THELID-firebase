@@ -33,6 +33,7 @@ const Home = () => {
   return (
     <main className="content">
       <div className="home">
+        Have the Scroll Based Velocity (Variant Vault) as a vertical on the page. YOU ARE A GOONER ON YOUR KNEES AS I WHIP YOUR COCK AND BALLS WHILE SMIRKING
       <div className="map">
         <Map
           initialViewState={{

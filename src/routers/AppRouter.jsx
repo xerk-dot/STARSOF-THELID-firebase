@@ -44,6 +44,11 @@ const AppRouter = () => (
           exact
           path={ROUTES.RECOMMENDED_PRODUCTS}
         />
+        <Route
+          component={view.about_us}
+          exact
+          path={ROUTES.ABOUT_US}
+        />
         {/* PublicRoute for Signup and Signin */}
         <Route
           component={view.SignUp}
