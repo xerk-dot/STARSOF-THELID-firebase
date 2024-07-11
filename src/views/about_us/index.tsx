@@ -12,6 +12,8 @@ import {
   useAnimationFrame
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
+import ReactPlayer from 'react-player'
+
 
 interface ParallaxProps {
   children: string;
@@ -37,7 +39,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
    * have to replace for wrapping that works for you or dynamically
    * calculate
    */
-  const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
+  const x = useTransform(baseX, (v) => `${wrap(-20, -60, v)}%`);
 
   const directionFactor = useRef<number>(1);
   useAnimationFrame((t, delta) => {
@@ -66,17 +68,23 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
    * dynamically generated number of children.
    */
   return (
-    <div className="parallax">
-      <motion.div className="scroller" style={{ x }}>
-        <span className="scrolling-font">{children} </span>
-        <span className="scrolling-font">{children} </span>
-        <span className="scrolling-font">{children} </span>
-        <span className="scrolling-font">{children} </span>
-        <span className="scrolling-font">{children} </span>
+    <div>
 
 
-      </motion.div>
+      <div className="parallax">
+
+        <motion.div className="scroller" style={{ x }}>
+          <span className="scrolling-font">{children} </span>
+          <span className="scrolling-font">{children} </span>
+          <span className="scrolling-font">{children} </span>
+          <span className="scrolling-font">{children} </span>
+          <span className="scrolling-font">{children} </span>
+
+
+        </motion.div>
+      </div>
     </div>
+
   );
 }
 
@@ -85,11 +93,52 @@ const AboutUs = () => {
   useScrollTop();
 
   return (
-    <section>
-      <ParallaxText baseVelocity={-5}>YOUR BALLS AND DICK UP HIS ASS TO FUCK HIM WHILE SMIRKING BEING GOONER-IN-CHIEF I COMMAND YOU</ParallaxText>
-      <ParallaxText baseVelocity={5}>I WILL FIND AND HUNT YOU DOWN UNTIL YOU SUBMIT</ParallaxText>
+    <div>
+      <div className='player-wrapper'>
+        <ReactPlayer
+            className='react-player'
+            url='https://www.youtube.com/watch?v=LXb3EKWsInQ&t=161s'
+            width='200vh'
+            height='100vh'
+        />
+      </div>
+      <section>
+        <ParallaxText baseVelocity={-3}>RIPE HAIRY MALE ASS WHEN YOU SNIFF PITS AND</ParallaxText>
+        <ParallaxText baseVelocity={2}>SUPERIOR MEN HUNTING YOU DOWN TIL YOU WORSHIP</ParallaxText>
+        <ParallaxText baseVelocity={-1}>AS GOONER-IN-CHIEF I GO UP+DOWN ON PENIS 'CAUSE ITS EASY TO GOON-GET LIL' GOONER HOLE ONCE YOU GOON-GOT THEIR LIL' GOONER MINDS</ParallaxText>
+        <div className="banner-desc">
+        only to now be infected by a lame prudish identity-term-driven apparatus which has isolated/pacified millions of meek individuals. put more bluntly, too many people circle-jerk without being hands-on.
 
-    </section>
+        what motivates STARSOF THELID? driven by a deep desire to empower individuals so they arent as afraid of their bodies. i am passionate for products that feature social networks which provide individuals with the agency to find others.
+
+        what is this? a map-based social networking app for men who have sex with men
+
+        intent? to (hopefully not) dismantle the nuclear family and (instead) ensure a more procedural world. my wildly libertarian project will empower men who have sex with men.
+
+      too difficult to introduce into branding. 
+        words we avoid given:
+        - ambiguous/vague definition
+        - not rooted in a relational/transactional dichotomy
+        - too academic and/or lacking widespread usage
+        - too idealistic/platonic and prone to potential dogmatism
+
+        only used in critical analysis of phenomenal contexts, never self-applied.
+
+
+        the word "gay" ------ "homo-", "same-sex", "iron strikes iron", "like attracts like", "men who have sex with men (MSM)", "inter-male"
+
+        terms of undefinable large-scale experience: love, orgy, romance/romanticism, passion, "human experience", new, "out of the closet", empathy, comfort
+        terms of levels of commitment: dating, hookup, monogamy, ethical non-monogamy, polyamory, inclusive, single      
+        terms of vast sociopolitical identity: gender, sexuality, -fluid, demi-, LGBTQIA (notable exceptions are Trans + Intersex, but solely if expressed via the description of the physical manifestation and biological correlates.)
+        
+
+
+        </div>
+
+      </section>
+
+    </div>
+
   );
 };
 
