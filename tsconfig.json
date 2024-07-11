@@ -1,14 +1,19 @@
 {
   "compilerOptions": {
     "target": "es2020",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "module": "ES2020",
     "sourceMap": true,
     "paths": {
       "@src/*": ["./src/*"]
-    }
+    },
+    "lib": [
+      "dom",
+      "es2015"
+  ],
   }
 }
