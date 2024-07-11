@@ -19,6 +19,7 @@ interface ParallaxProps {
 }
 
 
+
 function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
@@ -67,24 +68,28 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   return (
     <div className="parallax">
       <motion.div className="scroller" style={{ x }}>
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
+        <span className="scrolling-font">{children} </span>
+        <span className="scrolling-font">{children} </span>
+        <span className="scrolling-font">{children} </span>
+        <span className="scrolling-font">{children} </span>
+        <span className="scrolling-font">{children} </span>
+
+
       </motion.div>
     </div>
   );
 }
-
 
 const AboutUs = () => {
   useDocumentTitle('About Us | Starsof');
   useScrollTop();
 
   return (
-    <div>
+    <section>
+      <ParallaxText baseVelocity={-5}>YOUR BALLS AND DICK UP HIS ASS TO FUCK HIM WHILE SMIRKING BEING GOONER-IN-CHIEF I COMMAND YOU</ParallaxText>
+      <ParallaxText baseVelocity={5}>I WILL FIND AND HUNT YOU DOWN UNTIL YOU SUBMIT</ParallaxText>
 
-    </div>
+    </section>
   );
 };
 

@@ -122,7 +122,7 @@ html {
 }
 
 h1 {
-  font-size: 56px;
+  font-size: 66px;
   font-weight: 600;
   letter-spacing: -3px;
   line-height: 1.2;
@@ -179,7 +179,7 @@ img {
 .parallax .scroller {
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 64px;
+  font-size: 190px;
   display: flex;
   white-space: nowrap;
   display: flex;
@@ -189,4 +189,15 @@ img {
 .parallax span {
   display: block;
   margin-right: 30px;
+}
+
+.scrolling-font{
+  color: black;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 80px;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
 }
