@@ -33,32 +33,29 @@ const Home = () => {
   return (
     <main className="content">
       <div className="home">
-        Have the Scroll Based Velocity (Variant Vault) as a vertical on the page. YOU ARE A GOONER ON YOUR KNEES AS I WHIP YOUR COCK AND BALLS WHILE SMIRKING
-      <div className="map">
-        <Map
-          initialViewState={{
-            latitude: 37.759,
-            longitude: -122.447,
-            zoom: 12
-          }}
-          mapStyle={mapStyle && mapStyle.toJS()}
-          style={{width: 2000, height: 1000}}
-          styleDiffing
-          mapboxAccessToken={MAPBOX_TOKEN}
-        />
-      </div>
-      <div className="map-control-panel map-label">
-        <ControlPanel onChange={setMapStyle} />
-      </div>
+        <>
+          <Map
+            initialViewState={{
+              latitude: 37.759,
+              longitude: -122.447,
+              zoom: 12
+            }}
+            style={{width: "90vw", height: "100vh"}}
+
+            mapStyle={mapStyle && mapStyle.toJS()}
+            styleDiffing
+            mapboxAccessToken={MAPBOX_TOKEN}
+          />
+          <ControlPanel onChange={setMapStyle} />
+          </>
+
+
+
+
+
 
         <div className="banner">
           <div className="banner-desc">
-            <h1 className="text-thin">
-              <strong>Move fast</strong>
-              &nbsp;and break things&nbsp;
-              <strong>like holes</strong>
-            </h1>
-            <br />
             <Link to={SHOP} className="button">
               Shop Now &nbsp;
               <ArrowRightOutlined />
@@ -101,6 +98,10 @@ const Home = () => {
             />
           )}
         </div>
+
+
+
+
       </div>
     </main>
   );

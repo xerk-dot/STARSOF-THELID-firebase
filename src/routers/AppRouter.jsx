@@ -50,11 +50,11 @@ const AppRouter = () => (
           path={ROUTES.ABOUT_US}
         />
         {/* PublicRoute for Signup and Signin */}
-        <Route
+        <PublicRoute
           component={view.SignUp}
           path={ROUTES.SIGNUP}
         />
-        <Route
+        <PublicRoute
           component={view.SignIn}
           exact
           path={ROUTES.SIGNIN}

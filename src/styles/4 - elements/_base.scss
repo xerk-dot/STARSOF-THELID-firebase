@@ -76,7 +76,6 @@ h6 {
   padding: $top $pad-desktop;
   display: flex;
   animation: fadeIn .5s ease;
-
   @media (max-width: $mobile) {
     padding: 5rem $m-size;
     flex-direction: column;

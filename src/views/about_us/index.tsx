@@ -98,7 +98,7 @@ const AboutUs = () => {
         <ReactPlayer
             className='react-player'
             url='https://www.youtube.com/watch?v=LXb3EKWsInQ&t=161s'
-            width='200vh'
+            width='100vw'
             height='100vh'
         />
       </div>
