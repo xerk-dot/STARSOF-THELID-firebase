@@ -23,7 +23,7 @@
     "fire-init": "firebase init emulators",
     "fire-emulate": "firebase emulators:start",
     "deploy_fire_all": "firebase deploy",
-    "deploy_fire_hosting-only": "firebase deploy --only hosting"
+    "deploy": "firebase deploy --only hosting"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^2.0.0",
