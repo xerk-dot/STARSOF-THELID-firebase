@@ -79,9 +79,8 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
           <span className="scrolling-font">{children} </span>
           <span className="scrolling-font">{children} </span>
           <span className="scrolling-font">{children} </span>
-
-
         </motion.div>
+        
       </div>
     </div>
 
@@ -134,11 +133,8 @@ const AboutUs = () => {
 
 
         </div>
-
       </section>
-
     </div>
-
   );
 };
 
