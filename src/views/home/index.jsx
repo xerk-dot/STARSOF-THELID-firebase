@@ -10,6 +10,9 @@ import * as React from 'react';
 import {useState} from 'react';
 import Map from 'react-map-gl';
 import ControlPanel from './control-panel';
+import { Sheet } from 'react-modal-sheet';
+import { AwesomeButton } from 'react-awesome-button';
+import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoicnlrciIsImEiOiJjbHhjcWxiaDYwZmhrMnFvYWtlbDRlNzFzIn0.u3zAq2Ye9gGAzmkqijKMyQ'; // Set your mapbox token here
 
@@ -29,6 +32,7 @@ const Home = () => {
     isLoading: isLoadingRecommended,
     error: errorRecommended
   } = useRecommendedProducts(6);
+  const [isOpen, setOpen] = useState(false);
 
   return (
     <main className="content">
@@ -47,9 +51,29 @@ const Home = () => {
             mapboxAccessToken={MAPBOX_TOKEN}
           />
           <ControlPanel onChange={setMapStyle} />
-          </>
+        </>
 
 
+
+
+        <>
+        <AwesomeButton
+                cssModule={AwesomeButtonStyles}
+                type="primary"
+                onPress={() => setOpen(true)}>
+                Open Sheet
+        </AwesomeButton>
+
+          <Sheet isOpen={isOpen} onClose={() => setOpen(false)}>
+            <Sheet.Container>
+              <Sheet.Header />
+              <Sheet.Content>{
+          <ControlPanel onChange={setMapStyle} />
+             }</Sheet.Content>
+            </Sheet.Container>
+            <Sheet.Backdrop />
+          </Sheet>
+        </>
 
 
 
