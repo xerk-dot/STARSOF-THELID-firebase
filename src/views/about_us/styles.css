@@ -21,7 +21,7 @@ html {
 section {
   top: 80vh;
   bottom: 80vh;
-  position: absolute;
+  position: relative;
 }
 
 
