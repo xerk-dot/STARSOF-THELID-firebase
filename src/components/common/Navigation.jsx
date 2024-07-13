@@ -75,8 +75,8 @@ const Navigation = () => {
       </div>
       
       <ul className="navigation-menu-main">
-        <li><NavLink activeClassName="navigation-menu-active" exact to={ROUTE.HOME}>Home</NavLink></li>
-        <li><NavLink activeClassName="navigation-menu-active" to={ROUTE.SHOP}>Shop</NavLink></li>
+        <li><NavLink activeClassName="navigation-menu-active" exact to={ROUTE.HOME}>Map</NavLink></li>
+        <li><NavLink activeClassName="navigation-menu-active" to={ROUTE.SHOP}>Events</NavLink></li>
         <li><NavLink activeClassName="navigation-menu-active" to={ROUTE.ABOUT_US}>About Us</NavLink></li>
       </ul>
 
