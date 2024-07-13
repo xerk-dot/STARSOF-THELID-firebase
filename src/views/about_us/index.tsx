@@ -93,14 +93,14 @@ const AboutUs = () => {
 
   return (
     <div>
-      <div className='player-wrapper'>
-        <ReactPlayer
+       <div className='player-wrapper'>
+{/*         <ReactPlayer
             className='react-player'
             url='https://www.youtube.com/watch?v=LXb3EKWsInQ&t=161s'
             width='100vw'
             height='100vh'
-        />
-      </div>
+        /> */}
+      </div> 
       <section>
         <ParallaxText baseVelocity={-3}>RIPE HAIRY MALE ASS WHEN YOU SNIFF PITS AND</ParallaxText>
         <ParallaxText baseVelocity={2}>SUPERIOR MEN HUNTING YOU DOWN TIL YOU WORSHIP</ParallaxText>
@@ -134,7 +134,7 @@ const AboutUs = () => {
 
         </div>
       </section>
-    </div>
+{/*  */}    </div>
   );
 };
 

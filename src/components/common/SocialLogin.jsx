@@ -1,9 +1,9 @@
-import { FacebookOutlined, GithubFilled, GoogleOutlined } from '@ant-design/icons';
+import { FacebookFilled, FacebookOutlined, GithubFilled, GoogleOutlined, InstagramFilled } from '@ant-design/icons';
 import PropType from 'prop-types';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { signInWithFacebook, signInWithGithub, signInWithGoogle } from '@/redux/actions/authActions';
-import { AwesomeButtonShare } from "react-awesome-button";
+import { AwesomeButton } from "react-awesome-button";
 
 const SocialLogin = ({ isLoading }) => {
   const dispatch = useDispatch();
@@ -20,41 +20,51 @@ const SocialLogin = ({ isLoading }) => {
     dispatch(signInWithGithub());
   };
 
+  
+
+  
+
+
   return (
     <div className="auth-provider">
-      <button
-        className="button auth-provider-button provider-facebook"
-        disabled={isLoading}
-        onClick={onSignInWithFacebook}
-        type="button"
-      >
-        {/* <i className="fab fa-facebook" /> */}
-        <FacebookOutlined />
-        Continue with Facebook
-      </button>
-      <button
-        className="button auth-provider-button provider-google"
-        disabled={isLoading}
-        onClick={onSignInWithGoogle}
-        type="button"
-      >
-        <GoogleOutlined />
-        Continue with Google
-      </button>
-      <button
-        className="button auth-provider-button provider-github"
-        disabled={isLoading}
-        onClick={onSignInWithGithub}
-        type="button"
-      >
-        <GithubFilled />
-        Continue with GitHub
 
-        <AwesomeButtonShare type="github" href="https://github.com/username">GitHub</AwesomeButtonShare>
-        <AwesomeButtonShare type="instagram" href="https://linkedin.com/username">Instagram</AwesomeButtonShare>
-        <AwesomeButtonShare type="twitter">Twitter</AwesomeButtonShare>
 
-      </button>
+
+    <AwesomeButton
+      type="facebook"
+      disabled={isLoading}
+      onPress={onSignInWithFacebook}
+    >
+      <FacebookFilled style={{ fontSize: '26px'}}/>
+      Continue with Facebook
+    </AwesomeButton>
+    <AwesomeButton
+      type="messenger"
+      disabled={isLoading}
+      onPress={onSignInWithGoogle}
+    >
+      <GoogleOutlined style={{ fontSize: '26px'}}/>
+      Continue with Google
+    </AwesomeButton>
+    <AwesomeButton
+      type="github"
+      disabled={isLoading}
+      onPress={onSignInWithGithub}
+    >
+      <GithubFilled style={{ fontSize: '26px'}}/>
+      Continue with GitHub
+    </AwesomeButton>
+
+
+      <AwesomeButton
+      type="instagram" // Set button type (e.g., primary, secondary)
+      disabled={isLoading}
+      onPress={onSignInWithFacebook}
+    >
+        <InstagramFilled style={{ fontSize: '26px'}}/>
+
+        Continue with Instagram
+    </AwesomeButton>
     </div>
   );
 };
