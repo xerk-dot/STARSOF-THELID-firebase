@@ -76,7 +76,7 @@ const Home = () => {
         </>
 
 
-
+{/* 
 
         <div className="banner">
           <div className="banner-desc">
@@ -123,7 +123,7 @@ const Home = () => {
           )}
         </div>
 
-
+ */}
 
 
       </div>

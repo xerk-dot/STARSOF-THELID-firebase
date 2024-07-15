@@ -71,7 +71,7 @@ const Navigation = (props) => {
             <i className="fa fa-filter" />
           </button>
         </FiltersToggle>
-      </div> */}
+      </div> */}  
     </nav>
   );
 };

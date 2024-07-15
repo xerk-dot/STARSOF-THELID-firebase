@@ -78,17 +78,7 @@ function StyleControls(props) {
 
   return (
     <div className="control-panel">
-      <h3>Dynamic Styling</h3>
-      <p>Dynamically show/hide map layers and change color with Immutable map style.</p>
-      <div className="source-link">
-        <a
-          href="https://github.com/visgl/react-map-gl/tree/7.0-release/examples/layers"
-          target="_new"
-        >
-          View Code ↗
-        </a>
-      </div>
-      <hr />
+
       {categories.map(name => (
         <div key={name} className="input">
           <label>{name}</label>
