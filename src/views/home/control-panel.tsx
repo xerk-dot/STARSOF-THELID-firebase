@@ -77,7 +77,9 @@ function StyleControls(props) {
   };
 
   return (
-    <div className="control-panel">
+
+<div>asdfs</div>
+/*     <div className="map-control-panel">
 
       {categories.map(name => (
         <div key={name} className="input">
@@ -95,7 +97,9 @@ function StyleControls(props) {
           />
         </div>
       ))}
-    </div>
+    </div> */
+
+
   );
 }
 

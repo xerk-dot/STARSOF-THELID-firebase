@@ -1,21 +1,3 @@
-::-webkit-scrollbar {
-  height: 5px;
-  width: 5px;
-  background: var(--background);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  -webkit-border-radius: 1ex;
-}
-
-::-webkit-scrollbar-corner {
-  background: var(--background);
-}
-
-html {
-  scroll-snap-type: y mandatory;
-}
 
 
 section {
@@ -52,7 +34,7 @@ section {
 }
 
 .scrolling-font{
-  color: black;
+  color: rgb(0, 0, 0);
   font-weight: 600;
   text-transform: uppercase;
   font-size: 80px;

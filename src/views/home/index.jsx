@@ -1,4 +1,4 @@
-import { ArrowRightOutlined } from '@ant-design/icons';
+import { AlipaySquareFilled, ArrowRightOutlined, FacebookFilled } from '@ant-design/icons';
 import { MessageDisplay } from '@/components/common';
 import { ProductShowcaseGrid } from '@/components/product';
 import { FEATURED_PRODUCTS, RECOMMENDED_PRODUCTS, SHOP } from '@/constants/routes';
@@ -20,6 +20,9 @@ const Home = () => {
   useDocumentTitle('STARSOF THELID | Home');
   useScrollTop();
   const [mapStyle, setMapStyle] = useState(null);
+
+
+/*  
   const {
     featuredProducts,
     fetchFeaturedProducts,
@@ -31,12 +34,13 @@ const Home = () => {
     fetchRecommendedProducts,
     isLoading: isLoadingRecommended,
     error: errorRecommended
-  } = useRecommendedProducts(6);
-  const [isOpen, setOpen] = useState(false);
+  } = useRecommendedProducts(6);  */
+  const [isOpen, setOpen] = useState(false); 
+
+
 
   return (
-    <main className="content">
-      <div className="home">
+      <div> 
         <>
           <Map
             initialViewState={{
@@ -44,17 +48,16 @@ const Home = () => {
               longitude: -122.447,
               zoom: 12
             }}
-            style={{width: "90vw", height: "100vh"}}
+            style={{width: "100vw", height: "100vh"}}
+            mapStyle="mapbox://styles/mapbox/dark-v11"
 
-            mapStyle={mapStyle && mapStyle.toJS()}
+            // mapStyle={mapStyle && mapStyle.toJS()}
             styleDiffing
             mapboxAccessToken={MAPBOX_TOKEN}
+            
           />
-          <ControlPanel onChange={setMapStyle} />
+
         </>
-
-
-
 
         <>
         <AwesomeButton
@@ -68,7 +71,10 @@ const Home = () => {
             <Sheet.Container>
               <Sheet.Header />
               <Sheet.Content>{
-          <ControlPanel onChange={setMapStyle} />
+                <>
+                <FacebookFilled></FacebookFilled>
+                <ControlPanel onChange={setMapStyle} />
+                </>
              }</Sheet.Content>
             </Sheet.Container>
             <Sheet.Backdrop />
@@ -77,6 +83,7 @@ const Home = () => {
 
 
 {/* 
+          
 
         <div className="banner">
           <div className="banner-desc">
@@ -125,9 +132,7 @@ const Home = () => {
 
  */}
 
-
       </div>
-    </main>
   );
 };
 
