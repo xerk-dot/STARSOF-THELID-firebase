@@ -9,10 +9,11 @@ import { Link } from 'react-router-dom';
 import * as React from 'react';
 import {useState} from 'react';
 import Map from 'react-map-gl';
-import ControlPanel from './control-panel';
 import { Sheet } from 'react-modal-sheet';
 import { AwesomeButton } from 'react-awesome-button';
 import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss';
+import "mapbox-gl/dist/mapbox-gl.css"; //This line is SO IMPORTANT lol
+
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoicnlrciIsImEiOiJjbHhjcWxiaDYwZmhrMnFvYWtlbDRlNzFzIn0.u3zAq2Ye9gGAzmkqijKMyQ'; // Set your mapbox token here
 
@@ -73,7 +74,6 @@ const Home = () => {
               <Sheet.Content>{
                 <>
                 <FacebookFilled></FacebookFilled>
-                <ControlPanel onChange={setMapStyle} />
                 </>
              }</Sheet.Content>
             </Sheet.Container>
