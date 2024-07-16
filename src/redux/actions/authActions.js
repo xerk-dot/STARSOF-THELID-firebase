@@ -20,6 +20,18 @@ export const signInWithGithub = () => ({
   type: type.SIGNIN_WITH_GITHUB
 });
 
+export const signInWithTwitter = () => ({
+  type: type.SIGNIN_WITH_TWITTER
+});
+
+export const signInWithReddit = () => ({
+  type: type.SIGNIN_WITH_REDDIT
+});
+
+export const signInWithInstagram = () => ({
+  type: type.SIGNIN_WITH_INSTAGRAM
+});
+
 export const signUp = (user) => ({
   type: type.SIGNUP,
   payload: user

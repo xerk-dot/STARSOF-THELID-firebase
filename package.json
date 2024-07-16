@@ -68,6 +68,7 @@
     "@ant-design/icons": "^4.6.2",
     "@motionone/utils": "^10.18.0",
     "@primer/octicons-react": "^19.11.0",
+    "ag-grid-community": "^32.0.2",
     "babel-eslint": "^10.1.0",
     "firebase": "^8.4.3",
     "firebase-admin": "^12.2.0",

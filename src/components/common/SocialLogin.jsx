@@ -1,8 +1,8 @@
-import { FacebookFilled, FacebookOutlined, GithubFilled, GoogleOutlined, InstagramFilled } from '@ant-design/icons';
+import { FacebookFilled, FacebookOutlined, GithubFilled, GoogleOutlined, InstagramFilled, RedditOutlined, RedditSquareFilled, TwitterCircleFilled, TwitterOutlined } from '@ant-design/icons';
 import PropType from 'prop-types';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { signInWithFacebook, signInWithGithub, signInWithGoogle } from '@/redux/actions/authActions';
+import { signInWithFacebook, signInWithGithub, signInWithGoogle, signInWithTwitter, signInWithInstagram, signInWithReddit} from '@/redux/actions/authActions';
 import { AwesomeButton } from "react-awesome-button";
 
 const SocialLogin = ({ isLoading }) => {
@@ -20,7 +20,17 @@ const SocialLogin = ({ isLoading }) => {
     dispatch(signInWithGithub());
   };
 
-  
+  const onSignInWithTwitter = () => {
+    dispatch(signInWithTwitter());
+  };
+
+  const onSignInWithInstagram = () => {
+    dispatch(signInWithInstagram());
+  };
+
+  const onSignInWithReddit = () => {
+    dispatch(signInWithReddit());
+  };
 
   
 
@@ -28,7 +38,15 @@ const SocialLogin = ({ isLoading }) => {
   return (
     <div className="auth-provider">
 
+    <AwesomeButton
+      type="twitter" // Set button type (e.g., primary, secondary)
+      disabled={isLoading}
+      onPress={onSignInWithTwitter}
+    >
+        <TwitterOutlined style={{ fontSize: '26px'}}/>
 
+        <div className="white-text">  Continue with Twitter </div>
+    </AwesomeButton>
 
     <AwesomeButton
       type="facebook"
@@ -36,7 +54,9 @@ const SocialLogin = ({ isLoading }) => {
       onPress={onSignInWithFacebook}
     >
       <FacebookFilled style={{ fontSize: '26px'}}/>
-      Continue with Facebook
+      
+      
+      <div className="white-text">  Continue with Facebook </div>
     </AwesomeButton>
     <AwesomeButton
       type="messenger"
@@ -44,7 +64,7 @@ const SocialLogin = ({ isLoading }) => {
       onPress={onSignInWithGoogle}
     >
       <GoogleOutlined style={{ fontSize: '26px'}}/>
-      Continue with Google
+      <div className="white-text">  Continue with Google </div>
     </AwesomeButton>
     <AwesomeButton
       type="github"
@@ -52,19 +72,31 @@ const SocialLogin = ({ isLoading }) => {
       onPress={onSignInWithGithub}
     >
       <GithubFilled style={{ fontSize: '26px'}}/>
-      Continue with GitHub
+      <div className="white-text">  Continue with Github </div>
     </AwesomeButton>
 
+    <AwesomeButton
+      type="reddit" // Set button type (e.g., primary, secondary)
+      disabled={isLoading}
+      onPress={onSignInWithReddit}
+    >
+        <RedditOutlined style={{ fontSize: '26px'}}/>
 
+        <div className="white-text">  Continue with Reddit </div>
+        </AwesomeButton>
+        
       <AwesomeButton
       type="instagram" // Set button type (e.g., primary, secondary)
       disabled={isLoading}
-      onPress={onSignInWithFacebook}
+      onPress={onSignInWithInstagram}
     >
         <InstagramFilled style={{ fontSize: '26px'}}/>
 
-        Continue with Instagram
-    </AwesomeButton>
+        <div className="black-text">  Continue with Instagram </div>
+        </AwesomeButton>
+
+  
+
     </div>
   );
 };
