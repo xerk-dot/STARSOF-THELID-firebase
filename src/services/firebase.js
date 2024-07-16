@@ -30,6 +30,17 @@ class Firebase {
   signInWithGithub = () =>
     this.auth.signInWithPopup(new app.auth.GithubAuthProvider());
 
+
+  //TODO: 
+  signInWithTwitter = () =>
+    this.auth.signInWithPopup(new app.auth.GoogleAuthProvider());
+
+  signInWithInstagram = () =>
+    this.auth.signInWithPopup(new app.auth.FacebookAuthProvider());
+
+  signInWithReddit = () =>
+    this.auth.signInWithPopup(new app.auth.GithubAuthProvider());
+
   signOut = () => this.auth.signOut();
 
   passwordReset = (email) => this.auth.sendPasswordResetEmail(email);
