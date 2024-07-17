@@ -32,7 +32,7 @@ const Home = () => {
   useDocumentTitle('STARSOF THELID | Home');
   useScrollTop();
   const [mapStyle, setMapStyle] = useState(null);
-
+  const [isOpen, setOpen] = useState(false); 
 
 /*  
   const {
@@ -47,15 +47,12 @@ const Home = () => {
     isLoading: isLoadingRecommended,
     error: errorRecommended
   } = useRecommendedProducts(6);  */
-  const [isOpen, setOpen] = useState(false); 
-
-
 
   return (
       <div> 
         <>
           <Map
-            initialViewState={{
+              initialViewState={{
               latitude: 37.759,
               longitude: -122.447,
               zoom: 12
