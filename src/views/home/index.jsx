@@ -15,6 +15,11 @@ import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss';
 import "mapbox-gl/dist/mapbox-gl.css"; //This line is SO IMPORTANT lol
 
 
+import heatmapLayer from "../../styles/7 - map-layers/heatmapLayer.json";
+import circleLayer from "../../styles/7 - map-layers/circleLayer.json";
+import symbolLayer from "../../styles/7 - map-layers/symbolLayer.json";
+import issLayer from "../../styles/7 - map-layers/issLayer.json";
+
 const MAPBOX_TOKEN = 'pk.eyJ1IjoicnlrciIsImEiOiJjbHhjcWxiaDYwZmhrMnFvYWtlbDRlNzFzIn0.u3zAq2Ye9gGAzmkqijKMyQ'; // Set your mapbox token here
 
 const Home = () => {

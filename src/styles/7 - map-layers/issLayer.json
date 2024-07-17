@@ -1,0 +1,8 @@
+{
+    "id": "iss",
+    "type": "symbol",
+    "source": "iss",
+    "layout": {
+      "icon-image": "rocket"
+    }
+}

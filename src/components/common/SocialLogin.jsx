@@ -66,14 +66,7 @@ const SocialLogin = ({ isLoading }) => {
       <GoogleOutlined style={{ fontSize: '26px'}}/>
       <div className="white-text">  Continue with Google </div>
     </AwesomeButton>
-    <AwesomeButton
-      type="github"
-      disabled={isLoading}
-      onPress={onSignInWithGithub}
-    >
-      <GithubFilled style={{ fontSize: '26px'}}/>
-      <div className="white-text">  Continue with Github </div>
-    </AwesomeButton>
+
 
     <AwesomeButton
       type="reddit" // Set button type (e.g., primary, secondary)
@@ -84,7 +77,19 @@ const SocialLogin = ({ isLoading }) => {
 
         <div className="white-text">  Continue with Reddit </div>
         </AwesomeButton>
+
         
+    <AwesomeButton
+      type="github"
+      disabled={isLoading}
+      onPress={onSignInWithGithub}
+    >
+      <GithubFilled style={{ fontSize: '26px'}}/>
+      <div className="white-text">  Continue with Github </div>
+    </AwesomeButton>
+
+
+
       <AwesomeButton
       type="instagram" // Set button type (e.g., primary, secondary)
       disabled={isLoading}
