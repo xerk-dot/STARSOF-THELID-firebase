@@ -28,11 +28,18 @@ import { FEATURED_PRODUCTS, RECOMMENDED_PRODUCTS, SHOP } from '@/constants/route
 const MAPBOX_TOKEN = 'pk.eyJ1IjoicnlrciIsImEiOiJjbHhjcWxiaDYwZmhrMnFvYWtlbDRlNzFzIn0.u3zAq2Ye9gGAzmkqijKMyQ'; // Set your mapbox token here
 
 
+
 const Home = () => {
   useDocumentTitle('STARSOF THELID | Home');
   useScrollTop();
   const [mapStyle, setMapStyle] = useState(null);
   const [isOpen, setOpen] = useState(false); 
+  const [data, setData] = useState(false); 
+
+
+
+  
+
 
 /*  
   const {
@@ -47,11 +54,62 @@ const Home = () => {
     isLoading: isLoadingRecommended,
     error: errorRecommended
   } = useRecommendedProducts(6);  */
+  const mapRef = useRef(null);
 
+  const onMapLoad = useCallback(() => {
+    mapRef.current.on('onIdle', async () => {
+
+      async function getLocation(updateSource) {
+        try {
+          const response = await fetch(
+            'https://api.wheretheiss.at/v1/satellites/25544',
+            { method: 'GET' }
+          );
+          const { latitude, longitude } = await response.json();
+
+          setData({
+            type: 'FeatureCollection',
+            features: [
+              {
+                type: 'Feature',
+                geometry: {
+                  type: 'Point',
+                  coordinates: [longitude, latitude]
+                }
+              }
+            ]
+          });
+        } catch (err) {
+          if (updateSource) clearInterval(updateSource);
+          throw new Error(err);
+        }
+      }
+
+      const geojson = await getLocation();
+      mapRef.current.addSource('iss', {
+        type: 'geojson',
+        data: geojson
+      });
+      mapRef.current.addLayer(issLayer);
+
+      const updateSource = setInterval(async () => {await getLocation(updateSource);}, 5000);
+
+      
+    });
+    mapRef.current.getSource('iss').setData(data);
+
+    return () => {
+      mapRef.current.remove();
+    };
+  }, []);
+
+  
   return (
       <div> 
         <>
           <Map
+              onLoad={onMapLoad}
+              ref={mapRef}
               initialViewState={{
               latitude: 37.759,
               longitude: -122.447,
