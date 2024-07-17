@@ -1,13 +1,7 @@
 import { AlipaySquareFilled, ArrowRightOutlined, FacebookFilled } from '@ant-design/icons';
-import { MessageDisplay } from '@/components/common';
-import { ProductShowcaseGrid } from '@/components/product';
-import { FEATURED_PRODUCTS, RECOMMENDED_PRODUCTS, SHOP } from '@/constants/routes';
-import {
-  useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop
-} from '@/hooks';
-import { Link } from 'react-router-dom';
+import {useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop} from '@/hooks';
 import * as React from 'react';
-import {useState} from 'react';
+import {useState, useRef, useCallback, useEffect} from 'react';
 import Map, {Source, Layer} from 'react-map-gl';
 import { Sheet } from 'react-modal-sheet';
 import { AwesomeButton } from 'react-awesome-button';
@@ -23,6 +17,13 @@ import issLayer from "../../styles/7 - map-layers/issLayer.json";
 
 import parkData from "../home/chicago-parks.json"
 import treeData from "../home/trees.json"
+
+/* 
+import { Link } from 'react-router-dom';
+import { MessageDisplay } from '@/components/common';
+import { ProductShowcaseGrid } from '@/components/product';
+import { FEATURED_PRODUCTS, RECOMMENDED_PRODUCTS, SHOP } from '@/constants/routes';
+ */
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoicnlrciIsImEiOiJjbHhjcWxiaDYwZmhrMnFvYWtlbDRlNzFzIn0.u3zAq2Ye9gGAzmkqijKMyQ'; // Set your mapbox token here
 
