@@ -8,7 +8,7 @@ import {
 import { Link } from 'react-router-dom';
 import * as React from 'react';
 import {useState} from 'react';
-import Map from 'react-map-gl';
+import Map, {Source, Layer} from 'react-map-gl';
 import { Sheet } from 'react-modal-sheet';
 import { AwesomeButton } from 'react-awesome-button';
 import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss';
@@ -20,7 +20,12 @@ import circleLayer from "../../styles/7 - map-layers/circleLayer.json";
 import symbolLayer from "../../styles/7 - map-layers/symbolLayer.json";
 import issLayer from "../../styles/7 - map-layers/issLayer.json";
 
+
+import parkData from "../home/chicago-parks.json"
+import treeData from "../home/trees.json"
+
 const MAPBOX_TOKEN = 'pk.eyJ1IjoicnlrciIsImEiOiJjbHhjcWxiaDYwZmhrMnFvYWtlbDRlNzFzIn0.u3zAq2Ye9gGAzmkqijKMyQ'; // Set your mapbox token here
+
 
 const Home = () => {
   useDocumentTitle('STARSOF THELID | Home');
@@ -54,6 +59,7 @@ const Home = () => {
               longitude: -122.447,
               zoom: 12
             }}
+            mapLib={import('mapbox-gl')}
             style={{width: "100vw", height: "100vh"}}
             mapStyle="mapbox://styles/mapbox/dark-v11"
 
@@ -61,7 +67,11 @@ const Home = () => {
             styleDiffing
             mapboxAccessToken={MAPBOX_TOKEN}
             
-          />
+          >
+            <Source id="my-data" type="geojson" data={treeData}>
+              <Layer {...heatmapLayer} />
+            </Source>
+          </Map>
 
         </>
 
