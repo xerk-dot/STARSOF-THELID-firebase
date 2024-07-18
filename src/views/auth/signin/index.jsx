@@ -85,7 +85,7 @@ const SignIn = ({ history }) => {
                           name="email"
                           type="email"
                           label="Email"
-                          placeholder="test@example.com"
+                          placeholder="gooner@example.com"
                           component={CustomInput}
                         />
                       </div>
@@ -95,7 +95,7 @@ const SignIn = ({ history }) => {
                           name="password"
                           type="password"
                           label="Password"
-                          placeholder="Your Password"
+                          placeholder="penisPassword"
                           component={CustomInput}
                         />
                       </div>
