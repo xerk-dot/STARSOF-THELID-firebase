@@ -70,7 +70,7 @@ const Home = () => {
             }}
             mapLib={import('mapbox-gl')}
             style={{width: "100vw", height: "100vh"}}
-            mapStyle="mapbox://styles/mapbox/dark-v11"
+            mapStyle="mapbox://styles/rykr/cly7tbems00tv01qjan5d7zm9"
 
             // mapStyle={mapStyle && mapStyle.toJS()}
             styleDiffing
