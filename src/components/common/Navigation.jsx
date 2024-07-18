@@ -69,71 +69,77 @@ const Navigation = () => {
     );
   }
   return (
-    <nav className="navigation" ref={navbar}>
-      <div className="logo">
-        <Link onClick={onClickLink} to="/"><img alt="Logo" src={logo} /></Link>
-      </div>
-      
-      <ul className="navigation-menu-main">
-        <li><NavLink activeClassName="navigation-menu-active" exact to={ROUTE.HOME}>Map</NavLink></li>
-        <li><NavLink activeClassName="navigation-menu-active" to={ROUTE.SHOP}>Events</NavLink></li>
-        <li><NavLink activeClassName="navigation-menu-active" to={ROUTE.ABOUT_US}>About Us</NavLink></li>
-      </ul>
+    <div>
+      <nav className="navigation" ref={navbar}>
+        <div className="logo">
+          <Link onClick={onClickLink} to="/"><img alt="Logo" src={logo} /></Link>
+        </div>
+        
+        <ul className="navigation-menu-main">
+          <li><NavLink activeClassName="navigation-menu-active" exact to={ROUTE.HOME}>Map</NavLink></li>
+          <li><NavLink activeClassName="navigation-menu-active" to={ROUTE.SHOP}>Events</NavLink></li>
+          <li><NavLink activeClassName="navigation-menu-active" to={ROUTE.ABOUT_US}>About Us</NavLink></li>
+        </ul>
 
-      {(pathname === ROUTE.SHOP || pathname === ROUTE.SEARCH) && (
-        <FiltersToggle>
-          <button className="button-muted button-small" type="button">
-            Filters &nbsp;
-            <FilterOutlined />
-          </button>
-        </FiltersToggle>
-      )}
-      <SearchBar />
-      <ul className="navigation-menu">
-        <li className="navigation-menu-item">
-          <BasketToggle>
-            {({ onClickToggle }) => (
-              <button
-                className="button-link navigation-menu-link basket-toggle"
-                disabled={basketDisabledpathnames.includes(pathname)}
-                onClick={onClickToggle}
-                type="button"
-              >
-
-                <Badge count={store.basketLength}>
-                  <ShoppingOutlined style={{ fontSize: '2.4rem' }} />
-                </Badge>
-              </button>
-            )}
-          </BasketToggle>
-        </li>
-        {store.user ? (
-          <li className="navigation-menu-item">
-            <UserAvatar />
-          </li>
-        ) : (
-          <li className="navigation-action">
-
-            {pathname !== ROUTE.SIGNUP && (
-              <AwesomeButton
-                cssModule={AwesomeButtonStyles}
-                type="primary"
-                href={ROUTE.SIGNUP}>
-                Sign Up
-              </AwesomeButton>
-            )}
-            {pathname !== ROUTE.SIGNIN && (
-              <AwesomeButton
-              cssModule={AwesomeButtonStyles}
-              type="secondary"
-              href={ROUTE.SIGNIN}>
-              Sign In
-            </AwesomeButton>
-            )}
-          </li>
+        {(pathname === ROUTE.SHOP || pathname === ROUTE.SEARCH) && (
+          <FiltersToggle>
+            <button className="button-muted button-small" type="button">
+              Filters &nbsp;
+              <FilterOutlined />
+            </button>
+          </FiltersToggle>
         )}
-      </ul>
+        <SearchBar />
+        <ul className="navigation-menu">
+          <li className="navigation-menu-item">
+            <BasketToggle>
+              {({ onClickToggle }) => (
+                <button
+                  className="button-link navigation-menu-link basket-toggle"
+                  disabled={basketDisabledpathnames.includes(pathname)}
+                  onClick={onClickToggle}
+                  type="button"
+                >
+
+                  <Badge count={store.basketLength}>
+                    <ShoppingOutlined style={{ fontSize: '2.4rem' }} />
+                  </Badge>
+                </button>
+              )}
+            </BasketToggle>
+          </li>
+          {store.user ? (
+            <li className="navigation-menu-item">
+              <UserAvatar />
+            </li>
+          ) : (
+            <li className="navigation-action">
+
+              {pathname !== ROUTE.SIGNUP && (
+                <AwesomeButton
+                  cssModule={AwesomeButtonStyles}
+                  type="primary"
+                  href={ROUTE.SIGNUP}>
+                  Sign Up
+                </AwesomeButton>
+              )}
+              {pathname !== ROUTE.SIGNIN && (
+                <AwesomeButton
+                cssModule={AwesomeButtonStyles}
+                type="secondary"
+                href={ROUTE.SIGNIN}>
+                Sign In
+              </AwesomeButton>
+              )}
+            </li>
+          )}
+        </ul>
+      </nav>
+    <nav className="navigation-bottom">
+          
     </nav>
+    </div>
+    
   );
 };
 

@@ -43,6 +43,51 @@
   }
 }
 
+.navigation-bottom {
+  width: 100%;
+  height: 10rem;
+  background: $background-color;
+  display: flex;
+  align-items: center;
+  padding: .5rem 5rem;
+  padding-top: 3rem;
+  position: absolute;
+  bottom: 0px;
+  transform: translateY(0);
+  z-index: map-get($z-index, navigation);
+  box-shadow: none;
+  @include bezier-transition(transform, .3s, ease);
+
+  @include tablet {
+    padding: .5rem 2rem;
+  }
+
+  @include mobile {
+    padding: 0 $s-size;
+    position: fixed;
+  }
+
+  .logo {
+    height: inherit;
+    margin-right: 2rem;
+  }
+
+  .logo img {
+    width: 15rem;
+    height: inherit;
+    object-fit: contain;
+  }
+
+  .logo a {
+    display: block;
+    height: 100%;
+  }
+
+  .searchbar {
+    width: 300px;
+  }
+}
+
 .navigation-admin {
   height: 6rem;
   background: $white;

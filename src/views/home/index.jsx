@@ -54,61 +54,14 @@ const Home = () => {
     isLoading: isLoadingRecommended,
     error: errorRecommended
   } = useRecommendedProducts(6);  */
-  const mapRef = useRef(null);
-
-  const onMapLoad = useCallback(() => {
-    mapRef.current.on('onIdle', async () => {
-
-      async function getLocation(updateSource) {
-        try {
-          const response = await fetch(
-            'https://api.wheretheiss.at/v1/satellites/25544',
-            { method: 'GET' }
-          );
-          const { latitude, longitude } = await response.json();
-
-          setData({
-            type: 'FeatureCollection',
-            features: [
-              {
-                type: 'Feature',
-                geometry: {
-                  type: 'Point',
-                  coordinates: [longitude, latitude]
-                }
-              }
-            ]
-          });
-        } catch (err) {
-          if (updateSource) clearInterval(updateSource);
-          throw new Error(err);
-        }
-      }
-
-      const geojson = await getLocation();
-      mapRef.current.addSource('iss', {
-        type: 'geojson',
-        data: geojson
-      });
-      mapRef.current.addLayer(issLayer);
-
-      const updateSource = setInterval(async () => {await getLocation(updateSource);}, 5000);
-
-      
-    });
-    mapRef.current.getSource('iss').setData(data);
-
-    return () => {
-      mapRef.current.remove();
-    };
-  }, []);
-
   
+  const mapRef = useRef();
+
+
   return (
       <div> 
         <>
           <Map
-              onLoad={onMapLoad}
               ref={mapRef}
               initialViewState={{
               latitude: 37.759,
