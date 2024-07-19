@@ -70,17 +70,18 @@ const Navigation = () => {
   }
   return (
     <div>
+      
       <nav className="navigation" ref={navbar}>
-        <div className="logo">
-          <Link onClick={onClickLink} to="/"><img alt="Logo" src={logo} /></Link>
+        
+        <div className="navigation-company-name">
+           <NavLink activeClassName="navigation-company-name" exact to={ROUTE.ABOUT_US}>STARSOF THELID</NavLink>
         </div>
         
-        <ul className="navigation-menu-main">
-          <li><NavLink activeClassName="navigation-menu-active" exact to={ROUTE.HOME}>Map</NavLink></li>
-          <li><NavLink activeClassName="navigation-menu-active" to={ROUTE.SHOP}>Events</NavLink></li>
-          <li><NavLink activeClassName="navigation-menu-active" to={ROUTE.ABOUT_US}>About Us</NavLink></li>
-        </ul>
-
+        {pathname !== ROUTE.HOME && (
+          <ul className="navigation-menu-buttons">
+            <li><NavLink activeClassName="navigation-menu-active navigation-line-1" exact to={ROUTE.HOME}>go to map</NavLink></li>
+          </ul>
+        )}
         {(pathname === ROUTE.SHOP || pathname === ROUTE.SEARCH) && (
           <FiltersToggle>
             <button className="button-muted button-small" type="button">
@@ -116,28 +117,23 @@ const Navigation = () => {
             <li className="navigation-action">
 
               {pathname !== ROUTE.SIGNUP && (
-                <AwesomeButton
-                  cssModule={AwesomeButtonStyles}
-                  type="primary"
-                  href={ROUTE.SIGNUP}>
-                  Sign Up
-                </AwesomeButton>
+          <NavLink activeClassName="navigation-menu-active " to={ROUTE.SIGNUP}>signup</NavLink>
               )}
+              
+              {(pathname !== ROUTE.SIGNUP && pathname !== ROUTE.SIGNIN) && (
+                <div>
+                  &nbsp;&nbsp;/&nbsp;&nbsp;
+                </div>
+              )}
+               
               {pathname !== ROUTE.SIGNIN && (
-                <AwesomeButton
-                cssModule={AwesomeButtonStyles}
-                type="secondary"
-                href={ROUTE.SIGNIN}>
-                Sign In
-              </AwesomeButton>
+          <NavLink activeClassName="navigation-menu-active" to={ROUTE.SIGNIN}> signin</NavLink>
               )}
+
             </li>
           )}
         </ul>
       </nav>
-    <nav className="navigation-bottom">
-          
-    </nav>
     </div>
     
   );

@@ -1,6 +1,5 @@
 import { useDocumentTitle, useScrollTop } from '../../hooks';
 import React from 'react';
-import "./styles.css";
 import { useRef } from "react";
 import {
   motion,
@@ -68,21 +67,20 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
    * dynamically generated number of children.
    */
   return (
-    <div>
-
-
+    <>
+    
       <div className="parallax">
 
-        <motion.div className="scroller" style={{ x }}>
-          <span className="scrolling-font">{children} </span>
-          <span className="scrolling-font">{children} </span>
-          <span className="scrolling-font">{children} </span>
-          <span className="scrolling-font">{children} </span>
-          <span className="scrolling-font">{children} </span>
+        <motion.div className="parallax-scroller" style={{ x }}>
+          <span className="parallax-scrolling-font">{children} </span>
+          <span className="parallax-scrolling-font">{children} </span>
+          <span className="parallax-scrolling-font">{children} </span>
+          <span className="parallax-scrolling-font">{children} </span>
+          <span className="parallax-scrolling-font">{children} </span>
         </motion.div>
         
       </div>
-    </div>
+    </>
 
   );
 }
@@ -93,6 +91,11 @@ const AboutUs = () => {
 
   return (
     <div>
+
+        <div className='about-me-title'>
+          A map-based kink-lifecycle app
+        </div>
+
        <div className='player-wrapper'>
 {/*         <ReactPlayer
             className='react-player'

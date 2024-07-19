@@ -1,12 +1,3 @@
-
-
-section {
-  top: 15vh;
-  bottom: 80vh;
-  position: relative;
-}
-
-
 .parallax {
   overflow: hidden;
   letter-spacing: -2px;
@@ -18,7 +9,7 @@ section {
   background-color: aqua;
 }
 
-.parallax .scroller {
+.parallax-scroller {
   font-weight: 600;
   text-transform: uppercase;
   font-size: 190px;
@@ -28,12 +19,12 @@ section {
   flex-wrap: nowrap;
 }
 
-.parallax span {
+.parallax-span {
   display: block;
   margin-right: 30px;
 }
 
-.scrolling-font{
+.parallax-scrolling-font {
   color: rgb(0, 0, 0);
   font-weight: 600;
   text-transform: uppercase;
