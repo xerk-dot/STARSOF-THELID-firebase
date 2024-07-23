@@ -26,6 +26,10 @@ import { Sheet } from 'react-modal-sheet';
 import { AwesomeButton } from 'react-awesome-button';
 import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss';
 
+import { Planet } from 'react-planet';
+import { color } from 'framer-motion';
+
+import hidingWhite from '../home/popup-hidingWhite.css';
 
 /* 
 import { Link } from 'react-router-dom';
@@ -114,16 +118,77 @@ const Home = () => {
           
 
 
-            {/* This is for the pins */}
+            {/* This is for the */}
             {pins}
 
             {popupInfo && (
               <Popup
-                anchor="top"
+                anchor="center"
                 longitude={Number(popupInfo.longitude)}
                 latitude={Number(popupInfo.latitude)}
                 onClose={() => setPopupInfo(null)}
+                closeButton={false}
+                closeOnClick= {false}
+                closeOnMove= {true}
+                offset={[-60,-55]}
               >
+              <div>
+                <Planet
+                      centerContent={
+                        <div
+                          style={{
+                            height: 100,
+                            width: 100,
+                            borderRadius: '50%',
+                            backgroundColor: '#1da8a4',
+                            opacity:.8,
+                          }}
+                        />
+                      }
+                      open
+                      autoClose
+                      mass={4}
+                      tension={500}
+                      friction={19}
+                      dragablePlanet
+                      dragRadiusPlanet={20}
+                      bounce
+                    >
+                      <div
+                        style={{
+                          height: 60,
+                          width: 60,
+                          borderRadius: '50%',
+                          backgroundColor: '#9257ad',
+                        }}
+                      />
+                      <div
+                        style={{
+                          height: 60,
+                          width: 60,
+                          borderRadius: '50%',
+                          backgroundColor: '#orange',
+                        }}
+                      />
+                      <div
+                        style={{
+                          height: 60,
+                          width: 60,
+                          borderRadius: '50%',
+                          backgroundColor: 'blue',
+                        }}
+                      />
+                      <div
+                        style={{
+                          height: 60,
+                          width: 60,
+                          borderRadius: '50%',
+                          backgroundColor: 'green',
+                        }}
+                      />
+                    </Planet>
+                  </div>
+{/* 
                 <div>
                   {popupInfo.city}, {popupInfo.state} |{' '}
                   <a
@@ -134,6 +199,8 @@ const Home = () => {
                   </a>
                 </div>
                 <img width="100%" src={popupInfo.image} />
+                 */}
+
               </Popup>
             )} 
           </Map>
