@@ -167,7 +167,7 @@ const Home = () => {
                           height: 60,
                           width: 60,
                           borderRadius: '50%',
-                          backgroundColor: '#orange',
+                          backgroundColor: 'darksalmon',
                         }}
                       />
                       <div
