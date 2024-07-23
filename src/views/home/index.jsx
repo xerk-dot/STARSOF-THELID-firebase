@@ -1,12 +1,11 @@
+import * as React from 'react';
+import {useState, useRef, useMemo} from 'react';
+
+import Map, {Source, Layer, Marker, Popup} from 'react-map-gl';
 import { AlipaySquareFilled, ArrowRightOutlined, FacebookFilled } from '@ant-design/icons';
 import {useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop} from '@/hooks';
-import * as React from 'react';
-import {useState, useRef, useCallback, useEffect} from 'react';
-import Map, {Source, Layer} from 'react-map-gl';
-import { Sheet } from 'react-modal-sheet';
-import { AwesomeButton } from 'react-awesome-button';
-import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss';
 import "mapbox-gl/dist/mapbox-gl.css"; //This line is SO IMPORTANT lol
+
 
 
 import heatmapLayer from "../../styles/7 - map-layers/heatmapLayer.json";
@@ -17,6 +16,16 @@ import issLayer from "../../styles/7 - map-layers/issLayer.json";
 
 import parkData from "../home/chicago-parks.json"
 import treeData from "../home/trees.json"
+import CITIES from '../home/cities.json';
+
+
+import Pin from './pin';
+
+
+import { Sheet } from 'react-modal-sheet';
+import { AwesomeButton } from 'react-awesome-button';
+import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss';
+
 
 /* 
 import { Link } from 'react-router-dom';
@@ -36,9 +45,31 @@ const Home = () => {
   const [isOpen, setOpen] = useState(false); 
   const [data, setData] = useState(false); 
 
+   
+  const [popupInfo, setPopupInfo] = useState(null);
+
+  const pins = useMemo(
+    () =>
+      CITIES.map((city, index) => (
+        <Marker
+          key={`marker-${index}`}
+          longitude={city.longitude}
+          latitude={city.latitude}
+          anchor="bottom"
+          onClick={e => {
+            // If we let the click event propagates to the map, it will immediately close the popup
+            // with `closeOnClick: true`
+            e.originalEvent.stopPropagation();
+            setPopupInfo(city);
+          }}
+        >
+          <Pin />
+        </Marker>
+      )),
+    []
+  );
 
 
-  
 
 
 /*  
@@ -80,8 +111,32 @@ const Home = () => {
             <Source id="my-data" type="geojson" data={treeData}>
               <Layer {...heatmapLayer} />
             </Source>
-          </Map>
+          
 
+
+            {/* This is for the pins */}
+            {pins}
+
+            {popupInfo && (
+              <Popup
+                anchor="top"
+                longitude={Number(popupInfo.longitude)}
+                latitude={Number(popupInfo.latitude)}
+                onClose={() => setPopupInfo(null)}
+              >
+                <div>
+                  {popupInfo.city}, {popupInfo.state} |{' '}
+                  <a
+                    target="_new"
+                    href={`http://en.wikipedia.org/w/index.php?title=Special:Search&search=${popupInfo.city}, ${popupInfo.state}`}
+                  >
+                    Wikipedia
+                  </a>
+                </div>
+                <img width="100%" src={popupInfo.image} />
+              </Popup>
+            )} 
+          </Map>
         </>
 
         <>
