@@ -1,7 +1,8 @@
 .navigation {
   width: 100%;
   height: 8rem;
-  background: rgb(120, 115, 97);//$background-color;
+  background: rgb(160, 159, 153);//$background-color;
+  opacity: 80%;
   display: flex;
   align-items: center;
   padding: .5rem 5rem;
@@ -58,8 +59,9 @@
 
 .navigation-bottom {
   width: 100%;
-  height: 10rem;
-  background: $background-color;
+  height: 8rem;
+  background: rgb(150, 144, 123); //$background-color;
+  opacity: 40%;
   display: flex;
   align-items: center;
   padding: .5rem 5rem;
@@ -110,34 +112,18 @@
   justify-content: space-between;
 }
 
+
+
+
+//this is the menu for the client
 .navigation-menu {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 0;
   margin: 0;
   text-align: right;
-}
-
-.navigation-menu-main {
-  padding-left: 0;
-  margin-right: 2rem;
-  flex-grow: 1;
-
-  li {
-    display: inline-block;
-    
-    
-    a {
-      padding: 10px 15px;
-      font-size: 1.4rem;
-      opacity: .5;
-      
-      &:hover {
-        background: $background-color-01;
-      }
-    }
-  }
+  float: right;
+  border: 5px green
 }
 
 .navigation-menu-buttons {
@@ -160,16 +146,21 @@
 }
 
 .navigation-menu-item {
-  display: inline-block;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  height: 100%;
+  list-style: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 .navigation-action {
   display: flex;
   align-items: center;
-  margin-left: $xxl-size;
+  //margin-left: $xxl-size;
+
+
 }
 
 .navigation-menu-link {
@@ -196,11 +187,4 @@
   text-transform: lowercase;
   font-weight: bold;
   opacity: 1 !important;
-}
-
-.navigation-line-1 {
-
-  width: 117.703px;
-  height: 1px;
-  border-bottom: 1px solid #FFF;
 }

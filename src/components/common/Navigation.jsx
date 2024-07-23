@@ -69,7 +69,9 @@ const Navigation = () => {
     );
   }
   return (
+    
     <div>
+      
       
       <nav className="navigation" ref={navbar}>
         
@@ -79,9 +81,11 @@ const Navigation = () => {
         
         {pathname !== ROUTE.HOME && (
           <ul className="navigation-menu-buttons">
-            <li><NavLink activeClassName="navigation-menu-active navigation-line-1" exact to={ROUTE.HOME}>go to map</NavLink></li>
+            <li><NavLink activeClassName="navigation-menu-active" exact to={ROUTE.HOME}>go to map</NavLink></li>
           </ul>
         )}
+
+
         {(pathname === ROUTE.SHOP || pathname === ROUTE.SEARCH) && (
           <FiltersToggle>
             <button className="button-muted button-small" type="button">
@@ -90,8 +94,10 @@ const Navigation = () => {
             </button>
           </FiltersToggle>
         )}
+
         {/* <SearchBar /> */}
         <ul className="navigation-menu">
+
           <li className="navigation-menu-item">
             <BasketToggle>
               {({ onClickToggle }) => (
@@ -109,33 +115,48 @@ const Navigation = () => {
               )}
             </BasketToggle>
           </li>
+
           {store.user ? (
             <li className="navigation-menu-item">
               <UserAvatar />
             </li>
           ) : (
-            <li className="navigation-action">
+            <li className="navigation-menu-item">
 
-              {pathname !== ROUTE.SIGNUP && (
-          <NavLink activeClassName="navigation-menu-active " to={ROUTE.SIGNUP}>signup</NavLink>
+              {(pathname !== ROUTE.SIGNUP && pathname !== ROUTE.SIGNIN) && (
+          <NavLink activeClassName="navigation-menu-buttons " to={ROUTE.SIGNUP}>signup</NavLink>
               )}
               
+              {(pathname !== ROUTE.SIGNUP && pathname == ROUTE.SIGNIN) && (
+          <NavLink activeClassName="navigation-menu-buttons " to={ROUTE.SIGNUP}>signup instead</NavLink>
+              )}
+
               {(pathname !== ROUTE.SIGNUP && pathname !== ROUTE.SIGNIN) && (
                 <div>
                   &nbsp;&nbsp;/&nbsp;&nbsp;
                 </div>
               )}
                
-              {pathname !== ROUTE.SIGNIN && (
-          <NavLink activeClassName="navigation-menu-active" to={ROUTE.SIGNIN}> signin</NavLink>
+               {(pathname !== ROUTE.SIGNUP && pathname !== ROUTE.SIGNIN) && (
+          <NavLink activeClassName="navigation-menu-buttons " to={ROUTE.SIGNIN}>signin</NavLink>
               )}
+              
+              {(pathname !== ROUTE.SIGNIN && pathname == ROUTE.SIGNUP) && (
+          <NavLink activeClassName="navigation-menu-buttons " to={ROUTE.SIGNIN}>signin instead</NavLink>
+              )}
+
 
             </li>
           )}
         </ul>
       </nav>
+      <nav>
+        <div className="navigation-bottom">
+
+        </div>
+      </nav>
     </div>
-    
+     
   );
 };
 
