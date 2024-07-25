@@ -118,7 +118,7 @@ const Home = () => {
           >
             <Source id="my-data" type="geojson" data={treeData}>
               <Layer {...heatmapLayer} />
-              <Layer {...circle} />
+              <Layer {...circleLayer} />
 
             </Source>
           
