@@ -7,6 +7,8 @@ import {useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScroll
 import "mapbox-gl/dist/mapbox-gl.css"; //This line is SO IMPORTANT lol
 
 
+import { Planet } from 'react-planet';
+import { color } from 'framer-motion';
 
 import heatmapLayer from "../../styles/7 - map-layers/heatmapLayer.json";
 import circleLayer from "../../styles/7 - map-layers/circleLayer.json";
@@ -26,10 +28,11 @@ import { Sheet } from 'react-modal-sheet';
 import { AwesomeButton } from 'react-awesome-button';
 import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss';
 
-import { Planet } from 'react-planet';
-import { color } from 'framer-motion';
+
 
 import hidingWhite from '../home/popup-hidingWhite.css';
+
+import logoPic from '../../images/logo-full.png';
 
 /* 
 import { Link } from 'react-router-dom';
@@ -67,7 +70,7 @@ const Home = () => {
             setPopupInfo(city);
           }}
         >
-          <Pin />
+          <img className="map-icons" src={logoPic}/>
         </Marker>
       )),
     []
@@ -114,7 +117,6 @@ const Home = () => {
           >
             <Source id="my-data" type="geojson" data={treeData}>
               <Layer {...heatmapLayer} />
-              <Layer {...circleLayer} />
 
             </Source>
           
