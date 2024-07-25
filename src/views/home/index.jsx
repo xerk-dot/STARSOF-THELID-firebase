@@ -63,6 +63,7 @@ const Home = () => {
           longitude={city.longitude}
           latitude={city.latitude}
           anchor="bottom"
+
           onClick={e => {
             // If we let the click event propagates to the map, it will immediately close the popup
             // with `closeOnClick: true`
@@ -117,6 +118,7 @@ const Home = () => {
           >
             <Source id="my-data" type="geojson" data={treeData}>
               <Layer {...heatmapLayer} />
+              <Layer {...circle} />
 
             </Source>
           

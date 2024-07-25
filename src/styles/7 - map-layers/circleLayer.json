@@ -10,8 +10,8 @@
         "stops": [
           [{ "zoom": 15, "value": 1 }, 5],
           [{ "zoom": 15, "value": 62 }, 10],
-          [{ "zoom": 22, "value": 1 }, 20],
-          [{ "zoom": 22, "value": 62 }, 50]
+          [{ "zoom": 22, "value": 1 }, 50],
+          [{ "zoom": 22, "value": 62 }, 100]
         ]
       },
       "circle-color": {
