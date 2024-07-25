@@ -13,8 +13,10 @@ import Badge from './Badge';
 import FiltersToggle from './FiltersToggle';
 import MobileNavigation from './MobileNavigation';
 import SearchBar from './SearchBar';
-import { AwesomeButton } from 'react-awesome-button';
-import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss';
+
+
+
+
 
 const Navigation = () => {
   const navbar = useRef(null);
@@ -150,11 +152,7 @@ const Navigation = () => {
           )}
         </ul>
       </nav>
-      <nav>
-        <div className="navigation-bottom">
 
-        </div>
-      </nav>
     </div>
      
   );

@@ -1,0 +1,22 @@
+{
+  type: "FeatureCollection",
+    features:
+      [
+        '{{repeat(1000, 1002)}}',
+        {
+
+            type: "Feature",
+            properties: {
+              dbh: '{{integer(0,20)}}'
+            },
+            geometry: {
+              type: "Point",
+              coordinates: [
+                '{{floating(-77.031949, -77.020539)}}',
+                '{{floating(38.905345, 38.892379)}}'
+              ]
+            }
+          }
+
+      ]
+}

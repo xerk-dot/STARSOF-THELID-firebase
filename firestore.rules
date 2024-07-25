@@ -23,5 +23,13 @@ service cloud.firestore {
       allow create,update,delete: if request.auth.uid != null;
     	allow read: if true;
     }
+    match /events/{eventId} {
+      allow create,update,delete: if request.auth.uid != null;
+    	allow read: if true;
+    }
+    match /cities/{cityId} {
+      allow create,update,delete: if request.auth.uid != null;
+    	allow read: if true;
+    }
   }
 }

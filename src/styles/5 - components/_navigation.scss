@@ -59,13 +59,13 @@
 
 .navigation-bottom {
   width: 100%;
-  height: 8rem;
-  background: rgb(150, 144, 123); //$background-color;
-  opacity: 40%;
+  height: 6rem;
+  background: black; //$background-color;
+  opacity: 100%;
   display: flex;
   align-items: center;
   padding: .5rem 5rem;
-  padding-top: 3rem;
+  padding-top: 1rem;
   position: absolute;
   bottom: 0px;
   transform: translateY(0);
@@ -82,25 +82,6 @@
     position: fixed;
   }
 
-  .logo {
-    height: inherit;
-    margin-right: 2rem;
-  }
-
-  .logo img {
-    width: 15rem;
-    height: inherit;
-    object-fit: contain;
-  }
-
-  .logo a {
-    display: block;
-    height: 100%;
-  }
-
-  .searchbar {
-    width: 300px;
-  }
 }
 
 .navigation-admin {

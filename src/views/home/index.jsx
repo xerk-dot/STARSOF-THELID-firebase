@@ -114,6 +114,8 @@ const Home = () => {
           >
             <Source id="my-data" type="geojson" data={treeData}>
               <Layer {...heatmapLayer} />
+              <Layer {...circleLayer} />
+
             </Source>
           
 
@@ -130,7 +132,7 @@ const Home = () => {
                 closeButton={false}
                 closeOnClick= {false}
                 closeOnMove= {true}
-                offset={[-60,-55]}
+                offset={[-60,-50]}
               >
               <div>
                 <Planet
@@ -203,29 +205,47 @@ const Home = () => {
 
               </Popup>
             )} 
-          </Map>
-        </>
+         
 
-        <>
-        <AwesomeButton
-                cssModule={AwesomeButtonStyles}
-                type="primary"
-                onPress={() => setOpen(true)}>
-                Open Sheet
+
+          <Sheet 
+            isOpen={isOpen} 
+            onClose={() => setOpen(false)}
+            //these last two lines determine how far up the modal goes
+            snapPoints={[875]}
+            initialSnap={0}
+          >
+                <Sheet.Container className="modal-background">
+                  <Sheet.Header className="" />
+                  <Sheet.Content className="">{
+                    <>
+                    <FacebookFilled></FacebookFilled>
+                    </>
+                }</Sheet.Content>
+                </Sheet.Container>
+                <Sheet.Backdrop />
+          </Sheet>
+
+
+
+          </Map>
+       </>
+
+          <nav>
+            <div className="navigation-bottom">
+
+                <AwesomeButton
+                      cssModule={AwesomeButtonStyles}
+                      type="primary"
+                      onPress={() => setOpen(true)}>
+                      <div className="black-text">Events </div>
         </AwesomeButton>
 
-          <Sheet isOpen={isOpen} onClose={() => setOpen(false)}>
-            <Sheet.Container>
-              <Sheet.Header />
-              <Sheet.Content>{
-                <>
-                <FacebookFilled></FacebookFilled>
-                </>
-             }</Sheet.Content>
-            </Sheet.Container>
-            <Sheet.Backdrop />
-          </Sheet>
-        </>
+              
+            </div>
+          </nav>
+
+       
 
 
 {/* 

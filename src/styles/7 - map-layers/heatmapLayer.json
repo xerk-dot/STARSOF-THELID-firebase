@@ -1,46 +1,48 @@
 {
-    "id": "trees-heat",
-    "type": "heatmap",
-    "source": "trees",
-    "maxzoom": 15,
-    "paint": {
-      "heatmap-weight": {
-        "property": "dbh",
-        "type": "exponential",
-        "stops": [
-          [1, 0],
-          [62, 1]
-        ]
-      },
-      "heatmap-intensity": {
-        "stops": [
-          [11, 1],
-          [15, 3]
-        ]
-      },
-      "heatmap-color": [
-          "interpolate",
-          ["linear"],
-          ["heatmap-density"],
-          0,
-          "rgba(33,102,172,0)",
-          0.2,
-          "rgb(103,169,207)",
-          0.4,
-          "rgb(209,229,240)",
-          0.6,
-          "rgb(80, 164, 185)",
-          0.8,
-          "rgb(70, 154, 175)",
-          1,
-          "rgb(52, 115, 131)"
-      ],
-      "heatmap-radius": {
-        "stops": [
-          [11, 15],
-          [15, 20]
-        ]
-      },
+  "id": "trees-heat",
+  "type": "heatmap",
+  "source": "trees",
+  "maxzoom": 15,
+  "paint": {
+    "heatmap-weight": {
+      "property": "dbh",
+      "type": "exponential",
+      "stops": [
+        [1, 0],
+        [62, 1]
+      ]
+    },
+    "heatmap-intensity": {
+      "stops": [
+        [11, 1],
+        [15, 3]
+      ]
+    },
+
+    "heatmap-color": [
+      "interpolate",
+      ["linear"],
+      ["heatmap-density"],
+      0,
+      "rgba(33,102,172,0)",
+      0.2,
+      "rgb(103,169,207)",
+      0.4,
+      "rgb(209,229,240)",
+      0.6,
+      "rgb(253,219,199)",
+      0.8,
+      "rgb(239,138,98)",
+      1,
+      "rgb(178,24,43)"
+    ],
+
+    "heatmap-radius": {
+      "stops": [
+        [11, 15],
+        [15, 20]
+      ]
+    },
       "heatmap-opacity": {
         "default": 1,
         "stops": [
@@ -50,6 +52,6 @@
           [14, 0.7],
           [15, 0]
         ]
-      }
+      }  
     }
-  }
+}
