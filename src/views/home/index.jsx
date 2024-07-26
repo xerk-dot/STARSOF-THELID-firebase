@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {useState, useRef, useMemo} from 'react';
+import {useState, useRef} from 'react';
 
-import Map, {Source, Layer, Marker, Popup} from 'react-map-gl';
+import Map, {Source, Layer, Popup} from 'react-map-gl';
 import { AlipaySquareFilled, ArrowRightOutlined, FacebookFilled } from '@ant-design/icons';
 import {useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop} from '../../hooks';
 import "mapbox-gl/dist/mapbox-gl.css"; //This line is SO IMPORTANT lol
@@ -33,7 +33,7 @@ import { ProductShowcaseGrid } from '@/components/product';
 import { FEATURED_PRODUCTS, RECOMMENDED_PRODUCTS, SHOP } from '@/constants/routes';
  */
 
-const MAPBOX_TOKEN = 'pk.eyJ1IjoicnlrciIsImEiOiJjbHhjcWxiaDYwZmhrMnFvYWtlbDRlNzFzIn0.u3zAq2Ye9gGAzmkqijKMyQ'; // Set your mapbox token here
+const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN; // Set your mapbox token here
 
 
 
