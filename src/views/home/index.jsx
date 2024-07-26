@@ -33,7 +33,7 @@ import { ProductShowcaseGrid } from '@/components/product';
 import { FEATURED_PRODUCTS, RECOMMENDED_PRODUCTS, SHOP } from '@/constants/routes';
  */
 
-const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN; // Set your mapbox token here
+const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN; // Set the mapbox token here
 
 
 
