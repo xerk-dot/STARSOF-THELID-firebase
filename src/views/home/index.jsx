@@ -3,7 +3,7 @@ import {useState, useRef, useMemo} from 'react';
 
 import Map, {Source, Layer, Marker, Popup} from 'react-map-gl';
 import { AlipaySquareFilled, ArrowRightOutlined, FacebookFilled } from '@ant-design/icons';
-import {useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop} from '@/hooks';
+import {useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop} from '../../hooks';
 import "mapbox-gl/dist/mapbox-gl.css"; //This line is SO IMPORTANT lol
 
 
@@ -77,7 +77,37 @@ const Home = () => {
     []
   );
 
+function hide() {
+    let markers = document.getElementsByClassName("mapboxgl-marker");
+    for (let i = 0; i < markers.length; i++) {
+        markers[i].style.visibility = "hidden";
+    }
+}
 
+function show() {
+    let markers = document.getElementsByClassName("mapboxgl-marker");
+    for (let i = 0; i < markers.length; i++) {
+        markers[i].style.visibility = "visible";
+    }
+}
+
+
+/* function TryToHide() {
+  const {current: map} = useMap();
+
+  const onClick = () => {
+    map.flyTo({center: [126.9, 37.5]});
+  };
+
+  return <AwesomeButton
+    cssModule={AwesomeButtonStyles}
+    type="primary"
+    onPress={onClick()}
+    >
+    <div className="black-text">Get Zoom, try to hide </div>
+  </AwesomeButton>
+  
+} */
 
 
 /*  
@@ -93,7 +123,7 @@ const Home = () => {
     isLoading: isLoadingRecommended,
     error: errorRecommended
   } = useRecommendedProducts(6);  */
-  
+
   const mapRef = useRef();
 
 
@@ -231,21 +261,35 @@ const Home = () => {
           </Sheet>
 
 
-
           </Map>
        </>
 
           <nav>
             <div className="navigation-bottom">
 
-                <AwesomeButton
+            <AwesomeButton
                       cssModule={AwesomeButtonStyles}
                       type="primary"
                       onPress={() => setOpen(true)}>
                       <div className="black-text">Events </div>
         </AwesomeButton>
+                <AwesomeButton
+                      cssModule={AwesomeButtonStyles}
+                      type="primary"
+                      //onPress={() => setOpen(true)}>
+                      onPress={() => hide()}
+                      >
+                      <div className="black-text">Hide </div>
+        </AwesomeButton>
+        <AwesomeButton
+                      cssModule={AwesomeButtonStyles}
+                      type="primary"
+                      onPress={() => show()}
+                      >
+                      <div className="black-text">Show </div>
+        </AwesomeButton>
+        
 
-              
             </div>
           </nav>
 
