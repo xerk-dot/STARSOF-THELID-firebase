@@ -6,7 +6,7 @@ import { AlipaySquareFilled, ArrowRightOutlined, FacebookFilled } from '@ant-des
 import {useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop} from '../../hooks';
 import "mapbox-gl/dist/mapbox-gl.css"; //This line is SO IMPORTANT lol
 
-
+import {show, hide} from '../home/marker-visibility';
 import { Planet } from 'react-planet';
 import { color } from 'framer-motion';
 
@@ -16,23 +16,15 @@ import symbolLayer from "../../styles/7 - map-layers/symbolLayer.json";
 import issLayer from "../../styles/7 - map-layers/issLayer.json";
 
 
-import parkData from "../home/chicago-parks.json"
-import treeData from "../home/trees.json"
-import CITIES from '../home/cities.json';
-
-
-import Pin from './pin';
-
+import parkData from "../../training-data/chicago-parks.json"
+import treeData from "../../training-data/trees.json"
 
 import { Sheet } from 'react-modal-sheet';
 import { AwesomeButton } from 'react-awesome-button';
 import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss';
 
-
-
-import hidingWhite from '../home/popup-hidingWhite.css';
-
-import logoPic from '../../images/logo-full.png';
+import hidingWhite from '../home/popup-hidingWhite.css'; //this is used when a marker is clicked on, so dont delete this import!
+import {Pins} from '../../components/map-marker/map-marker';
 
 /* 
 import { Link } from 'react-router-dom';
@@ -55,59 +47,8 @@ const Home = () => {
    
   const [popupInfo, setPopupInfo] = useState(null);
 
-  const pins = useMemo(
-    () =>
-      CITIES.map((city, index) => (
-        <Marker
-          key={`marker-${index}`}
-          longitude={city.longitude}
-          latitude={city.latitude}
-          anchor="bottom"
-
-          onClick={e => {
-            // If we let the click event propagates to the map, it will immediately close the popup
-            // with `closeOnClick: true`
-            e.originalEvent.stopPropagation();
-            setPopupInfo(city);
-          }}
-        >
-          <img className="map-icons" src={logoPic}/>
-        </Marker>
-      )),
-    []
-  );
-
-function hide() {
-    let markers = document.getElementsByClassName("mapboxgl-marker");
-    for (let i = 0; i < markers.length; i++) {
-        markers[i].style.visibility = "hidden";
-    }
-}
-
-function show() {
-    let markers = document.getElementsByClassName("mapboxgl-marker");
-    for (let i = 0; i < markers.length; i++) {
-        markers[i].style.visibility = "visible";
-    }
-}
 
 
-/* function TryToHide() {
-  const {current: map} = useMap();
-
-  const onClick = () => {
-    map.flyTo({center: [126.9, 37.5]});
-  };
-
-  return <AwesomeButton
-    cssModule={AwesomeButtonStyles}
-    type="primary"
-    onPress={onClick()}
-    >
-    <div className="black-text">Get Zoom, try to hide </div>
-  </AwesomeButton>
-  
-} */
 
 
 /*  
@@ -155,7 +96,7 @@ function show() {
 
 
             {/* This is for the */}
-            {pins}
+            <Pins/>
 
             {popupInfo && (
               <Popup
@@ -166,7 +107,7 @@ function show() {
                 closeButton={false}
                 closeOnClick= {false}
                 closeOnMove= {true}
-                offset={[-60,-50]}
+                offset={-50}
               >
               <div>
                 <Planet
@@ -253,7 +194,11 @@ function show() {
                   <Sheet.Header className="" />
                   <Sheet.Content className="">{
                     <>
-                    <FacebookFilled></FacebookFilled>
+                    <Sheet.Scroller>
+                      <FacebookFilled></FacebookFilled>
+                    
+                    </Sheet.Scroller>
+                    
                     </>
                 }</Sheet.Content>
                 </Sheet.Container>

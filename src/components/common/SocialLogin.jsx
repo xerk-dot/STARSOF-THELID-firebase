@@ -47,6 +47,15 @@ const SocialLogin = ({ isLoading }) => {
 
         <div className="white-text">  Continue with Twitter </div>
     </AwesomeButton>
+    <AwesomeButton
+      type="messenger"
+      disabled={isLoading}
+      onPress={onSignInWithGoogle}
+    >
+      <GoogleOutlined style={{ fontSize: '26px'}}/>
+      <div className="white-text">  Continue with Google </div>
+    </AwesomeButton>
+
 
     <AwesomeButton
       type="facebook"
@@ -57,14 +66,6 @@ const SocialLogin = ({ isLoading }) => {
       
       
       <div className="white-text">  Continue with Facebook </div>
-    </AwesomeButton>
-    <AwesomeButton
-      type="messenger"
-      disabled={isLoading}
-      onPress={onSignInWithGoogle}
-    >
-      <GoogleOutlined style={{ fontSize: '26px'}}/>
-      <div className="white-text">  Continue with Google </div>
     </AwesomeButton>
 
 
@@ -97,7 +98,7 @@ const SocialLogin = ({ isLoading }) => {
     >
         <InstagramFilled style={{ fontSize: '26px'}}/>
 
-        <div className="black-text">  Continue with Instagram </div>
+        <div className="white-text">  Continue with Instagram </div>
         </AwesomeButton>
 
   
