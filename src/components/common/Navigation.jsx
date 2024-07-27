@@ -98,6 +98,7 @@ const Navigation = () => {
         )}
 
         {/* <SearchBar /> */}
+        
         <ul className="navigation-menu">
 
           <li className="navigation-menu-item">

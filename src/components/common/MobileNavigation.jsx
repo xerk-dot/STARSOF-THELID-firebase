@@ -1,5 +1,5 @@
 import { BasketToggle } from '@/components/basket';
-import { HOME, SIGNIN } from '@/constants/routes';
+import { HOME, SIGNIN, ABOUT_US } from '@/constants/routes';
 import PropType from 'prop-types';
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -22,7 +22,7 @@ const Navigation = (props) => {
     <nav className="mobile-navigation">
       <div className="mobile-navigation-main">
         <div className="mobile-navigation-logo">
-          <Link onClick={onClickLink} to={HOME}>
+          <Link onClick={onClickLink} to={ABOUT_US}>
             <h2>STARSOF</h2>
           </Link>
         </div>

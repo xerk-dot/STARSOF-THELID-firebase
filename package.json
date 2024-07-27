@@ -85,6 +85,7 @@
     "prop-types": "^15.7.2",
     "react": "^18.0.0",
     "react-awesome-button": "^7.0.5",
+    "react-bootstrap": "^2.10.4",
     "react-compound-slider": "^3.3.1",
     "react-dom": "^18.0.0",
     "react-loading-skeleton": "^2.2.0",
