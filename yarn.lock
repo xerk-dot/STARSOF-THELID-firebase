@@ -14953,10 +14953,10 @@ react-planet@^1.0.1-ie11:
     react-use-gesture "^7.0.15"
     use-resize-observer "^6.1.0"
 
-react-player@^2.16.0:
-  version "2.16.0"
-  resolved "https://registry.npmjs.org/react-player/-/react-player-2.16.0.tgz"
-  integrity sha512-mAIPHfioD7yxO0GNYVFD1303QFtI3lyyQZLY229UEAp/a10cSW+hPcakg0Keq8uWJxT2OiT/4Gt+Lc9bD6bJmQ==
+react-player@2.13.0:
+  version "2.13.0"
+  resolved "https://registry.npmjs.org/react-player/-/react-player-2.13.0.tgz"
+  integrity sha512-gkY7ZdbVFztlKFFhCPcnDrFQm+L399b8fhWsKatZ+b2wpKJwfUHBXQFMRxqYQGT0ic1/wQ7D7EZEWy7ZBqk2pw==
   dependencies:
     deepmerge "^4.0.0"
     load-script "^1.0.0"

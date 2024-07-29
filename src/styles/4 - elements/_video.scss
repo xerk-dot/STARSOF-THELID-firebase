@@ -1,7 +1,9 @@
-.player-wrapper {
-  position: relative;
+@media (max-width: 800px) {
+  .player-wrapper {
+    position: fixed;
+    width:800px;
+  }
 }
-
 .react-player {
   position: absolute;
   top: 0;
