@@ -100,6 +100,7 @@ const AboutUs = () => {
         <div>
            
             <section>
+
                 <ParallaxText baseVelocity={-3}>RIPE HAIRY MALE ASS WHEN YOU SNIFF PITS AND</ParallaxText>
                 <ParallaxText baseVelocity={2}>SUPERIOR MEN HUNTING YOU DOWN TIL YOU WORSHIP</ParallaxText>
                 <ParallaxText baseVelocity={-1}>AS GOONER-IN-CHIEF I GO UP+DOWN ON PENIS 'CAUSE ITS EASY TO GOON-GET LIL' GOONER HOLE ONCE YOU GOON-GOT THEIR LIL' GOONER MINDS</ParallaxText>
@@ -112,15 +113,17 @@ const AboutUs = () => {
 
 
 
-
+{/* 
        <div className='player-wrapper'>
          <ReactPlayer
             className='react-player'
             url='https://www.youtube.com/watch?v=LXb3EKWsInQ&t=161s'
             width='100vw'
-            height='100vh'
+            height='100vh'            
         /> 
       </div>
+
+ */}
 
       <br/>
       <br/>
