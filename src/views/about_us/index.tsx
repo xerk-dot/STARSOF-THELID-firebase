@@ -10,11 +10,35 @@ import {
   useTransform,
   useMotionValue,
   useVelocity,
-  useAnimationFrame
+  useAnimationFrame,
+  MotionValue
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
 import ReactPlayer from 'react-player'
 
+
+
+// Photos from https://citizenofnowhe.re/lines-of-the-city
+import "./styles.css";
+
+function useParallax(value: MotionValue<number>, distance: number) {
+  return useTransform(value, [0, 1], [-distance, distance]);
+}
+
+function Image({ id }: { id: number }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, -400);
+
+  return (
+    <section>
+      <div ref={ref}>
+        <img src={`/src/images/buildings/${id}.png`} alt="A London skyscraper" />
+      </div>
+      <motion.h2 style={{ y }}>{`#00${id}`}</motion.h2>
+    </section>
+  );
+}
 
 
 
@@ -92,10 +116,26 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 const AboutUs = () => {
   useDocumentTitle('About Us | Starsof');
   useScrollTop();
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 10,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   return (
     <div>
         
+
+
+
+        <>
+          {[1, 2, 3, 4, 5].map((image) => (
+            <Image id={image} />
+          ))}
+          <motion.div className="progress" style={{ scaleX }} />
+        </>
+
 
         <div>
            
@@ -145,6 +185,10 @@ const AboutUs = () => {
       <section>
         
         <div className="banner-desc">
+          <h1>A map-based web-app to END pornography</h1>
+
+
+
           only to now be infected by a lame prudish identity-term-driven apparatus which has isolated/pacified millions of meek individuals. put more bluntly, too many people circle-jerk without being hands-on.
 
           what motivates STARSOF THELID? driven by a deep desire to empower individuals so they arent as afraid of their bodies. i am passionate for products that feature social networks which provide individuals with the agency to find others.
@@ -154,7 +198,7 @@ const AboutUs = () => {
           intent? to (hopefully not) dismantle the nuclear family and (instead) ensure a more procedural world. my wildly libertarian project will empower men who have sex with men.
 
           too difficult to introduce into branding. 
-          words we avoid given:
+          words we <i> avoid </i>given:
           - ambiguous/vague definition
           - not rooted in a relational/transactional dichotomy
           - too academic and/or lacking widespread usage
@@ -165,9 +209,17 @@ const AboutUs = () => {
 
           the word "gay" ------ "homo-", "same-sex", "iron strikes iron", "like attracts like", "men who have sex with men (MSM)", "inter-male"
 
-          terms of undefinable large-scale experience: love, orgy, romance/romanticism, passion, "human experience", new, "out of the closet", empathy, comfort
-          terms of levels of commitment: dating, hookup, monogamy, ethical non-monogamy, polyamory, inclusive, single      
-          terms of vast sociopolitical identity: gender, sexuality, -fluid, demi-, LGBTQIA (notable exceptions are Trans + Intersex, but solely if expressed via the description of the physical manifestation and biological correlates.)
+          <ul>
+            <li>
+            terms of undefinable large-scale experience: love, orgy, romance/romanticism, passion, "human experience", new, "out of the closet", empathy, comfort
+            </li>
+            <li>
+            terms of levels of commitment: dating, hookup, monogamy, ethical non-monogamy, polyamory, inclusive, single      
+            </li>
+            <li>
+            terms of vast sociopolitical identity: gender, sexuality, -fluid, demi-, LGBTQIA (notable exceptions are Trans + Intersex, but solely if expressed via the description of the physical manifestation and biological correlates.
+            </li>
+          </ul>
           
 
 
