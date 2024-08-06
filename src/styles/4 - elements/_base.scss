@@ -16,6 +16,28 @@ body {
   background: $background-color;
   font-weight: bold;
   overflow-x: hidden;
+  /* Center and scale the image nicely */
+
+  /* Background Image */
+  background-image: 
+  url("src/images/about-assets/about-us_background_01.png"),
+   url("src/images/about-assets/about-us_background_02.png"),
+    url("src/images/about-assets/about-us_background_03.png"),
+     url("src/images/about-assets/about-us_background_04.png");
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-size: contain, contain, contain, contain;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 
+  0px 0px, 
+  0px 2510*1px, 
+  0px 2510*2px, 
+  0px 2510*3px, 
+  0px 2510*4px;
+
+  //background-position: center, center, center, center;
+
 }
 
 button:hover {
