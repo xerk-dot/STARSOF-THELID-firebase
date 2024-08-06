@@ -32,10 +32,32 @@ function Image({ id }: { id: number }) {
 
   return (
     <section>
-      <div ref={ref}>
+{/*       
         <img src={`/src/images/buildings/${id}.png`} alt="A London skyscraper" />
-      </div>
-      <motion.h2 style={{ y }}>{`#00${id}`}</motion.h2>
+      </div> */}
+      
+{/*       <img srcSet="https://via.placeholder.com/426x240 426w,
+                  https://via.placeholder.com/640x360 640w,
+                  https://via.placeholder.com/854x480 854w,
+                  https://via.placeholder.com/1280x720 1280w,
+                  https://via.placeholder.com/1920x1080 1920w,
+                  https://via.placeholder.com/2560x1440 2560w"
+          sizes="(max-width: 666px) 2560w,
+                  (max-width: 1399px) 38vw,
+                  535px"
+          src="https://via.placeholder.com/340x182"
+          alt="placeholder image"
+          className="parent"></img> */}
+      <div ref={ref}>
+          <img srcSet="src/images/about-assets/about-us_background_03.png 2000w 2000h"
+          sizes="(max-width: 666px) 2560w,
+                  (max-width: 1399px) 38vw,
+                  600px"
+          src="https://via.placeholder.com/340x182"
+          alt="placeholder image"
+          className="parent"></img>
+        </div>
+      {/* <motion.h2 style={{ y }}>{`#00${id}`}</motion.h2> */}
     </section>
   );
 }
@@ -118,24 +140,28 @@ const AboutUs = () => {
   useScrollTop();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
-    stiffness: 10,
+    stiffness: 100,
     damping: 30,
     restDelta: 0.001
   });
 
   return (
-    <div>
-        
 
+<>
+    <div>
 
 
         <>
+
+
           {[1, 2, 3, 4, 5].map((image) => (
+            
             <Image id={image} />
           ))}
           <motion.div className="progress" style={{ scaleX }} />
         </>
 
+    </div>
 
         <div>
            
@@ -225,7 +251,7 @@ const AboutUs = () => {
 
         </div>
       </section>
-    </div>
+      </>
   );
 };
 
