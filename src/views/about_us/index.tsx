@@ -2,15 +2,26 @@ import { useDocumentTitle, useScrollTop } from '../../hooks';
 import React from 'react';
 import { useRef } from "react";
 import { Container } from "react-bootstrap";
-import storyboardImage_01 from '../../images/about-assets/about-us_background_01.png';
-import storyboardImage_02 from '../../images/about-assets/about-us_background_02.png';
-import storyboardImage_03 from '../../images/about-assets/about-us_background_03.png';
-import storyboardImage_04 from '../../images/about-assets/about-us_background_04.png';
-import storyboardImage_05 from '../../images/about-assets/about-us_background_05.png';
-import storyboardImage_06 from '../../images/about-assets/about-us_background_06.png';
-import storyboardImage_07 from '../../images/about-assets/about-us_background_07.png';
-import storyboardImage_08 from '../../images/about-assets/about-us_background_08.png';
-import storyboardImage_09 from '../../images/about-assets/about-us_background_09.png';
+import storyboardImage_01_1x1 from '../../images/about-assets/about-us_background_01.png';
+import storyboardImage_01_4x5 from '../../images/about-assets/about-us_background_03.png';
+import storyboardImage_02_1x1 from '../../images/about-assets/about-us_background_05.png';
+import storyboardImage_02_4x5 from '../../images/about-assets/about-us_background_07.png';
+import storyboardImage_03_1x1 from '../../images/about-assets/about-us_background_08.png';
+import storyboardImage_03_4x5 from '../../images/about-assets/about-us_background_09.png';
+import storyboardImage_04_1x1 from '../../images/about-assets/about-us_background_10.png';
+import storyboardImage_04_4x5 from '../../images/about-assets/about-us_background_11.png';
+import storyboardImage_05_1x1 from '../../images/about-assets/about-us_background_12.png';
+import storyboardImage_05_4x5 from '../../images/about-assets/about-us_background_13.png';
+import storyboardImage_06_1x1 from '../../images/about-assets/about-us_background_14.png';
+import storyboardImage_06_4x5 from '../../images/about-assets/about-us_background_15.png';
+import storyboardImage_07_1x1 from '../../images/about-assets/about-us_background_16.png';
+import storyboardImage_07_4x5 from '../../images/about-assets/about-us_background_18.png';
+import storyboardImage_08_1x1 from '../../images/about-assets/about-us_background_19.png';
+import storyboardImage_08_4x5 from '../../images/about-assets/about-us_background_20.png';
+import storyboardImage_09_1x1 from '../../images/about-assets/about-us_background_21.png';
+import storyboardImage_09_4x5 from '../../images/about-assets/about-us_background_22.png';
+
+
 import {
   motion,
   useScroll,
@@ -37,20 +48,38 @@ function Image({ id }: { id: number }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 400);
-  const currentImage = id === 1 ? storyboardImage_01 :
-                        id === 2 ? storyboardImage_02 :
-                        id === 3 ? storyboardImage_03 :
-                        id === 4 ? storyboardImage_04 :
-                        id === 5 ? storyboardImage_05 :
-                        id === 6 ? storyboardImage_06 :
-                        id === 7 ? storyboardImage_07 :
-                        id === 8 ? storyboardImage_08 :
-                        id === 9 ? storyboardImage_09 :
+  let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+  let vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+  var aspectRatio = Math.abs(vw/vh);
+  var option = (aspectRatio>=1) ? 1 : (aspectRatio<=.8) ? 2 : (Math.abs(aspectRatio)-1) <= Math.abs((aspectRatio)-.8)? 1 : 2;
+
+  const currentImage = (id === 1 && option === 1) ? storyboardImage_01_1x1 :
+                        (id === 2 && option === 1) ? storyboardImage_02_1x1 :
+                        (id === 3 && option === 1) ? storyboardImage_03_1x1 :
+                        (id === 4 && option === 1) ? storyboardImage_04_1x1 :
+                        (id === 5 && option === 1) ? storyboardImage_05_1x1 :
+                        (id === 6 && option === 1) ? storyboardImage_06_1x1 :
+                        (id === 7 && option === 1) ? storyboardImage_07_1x1 :
+                        (id === 8 && option === 1) ? storyboardImage_08_1x1 :
+                        (id === 9 && option === 1) ? storyboardImage_09_1x1 :
+                        (id === 1 && option === 2) ? "https://placehold.co/400x700": //storyboardImage_01_4x5 :
+                        (id === 2 && option === 2) ? "https://placehold.co/400x700": //storyboardImage_02_4x5 :
+                        (id === 3 && option === 2) ? storyboardImage_03_4x5 :
+                        (id === 4 && option === 2) ? storyboardImage_04_4x5 :
+                        (id === 5 && option === 2) ? storyboardImage_05_4x5 :
+                        (id === 6 && option === 2) ? storyboardImage_06_4x5 :
+                        (id === 7 && option === 2) ? storyboardImage_07_4x5 :
+                        (id === 8 && option === 2) ? storyboardImage_08_4x5 :
+                        (id === 9 && option === 2) ? storyboardImage_09_4x5 :
   "https://placehold.co/600x400";
+  //https://ryanve.com/lab/dimensions/
+
+
 
   return (
     <section>
-{/*       
+    {/*       
         <img src={`/src/images/buildings/${id}.png`} alt="A London skyscraper" />
       </div> */}
       
@@ -58,14 +87,12 @@ function Image({ id }: { id: number }) {
       <div ref={ref}>
         
 
-
           <img srcSet={currentImage+" 2000w"}
           sizes="(max-width: 666px) 80vw"
           //src={`/src/images/buildings/${id}.png`}
-          alt="placeholder image"
+          alt="aspectRatio"
           className="parent"></img>
-
-
+          
         </div>
       {/* <motion.h2 style={{ y }}>{`#00${id}`}</motion.h2> */}
     </section>
