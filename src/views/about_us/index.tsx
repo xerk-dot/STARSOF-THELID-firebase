@@ -6,7 +6,11 @@ import storyboardImage_01 from '../../images/about-assets/about-us_background_01
 import storyboardImage_02 from '../../images/about-assets/about-us_background_02.png';
 import storyboardImage_03 from '../../images/about-assets/about-us_background_03.png';
 import storyboardImage_04 from '../../images/about-assets/about-us_background_04.png';
-
+import storyboardImage_05 from '../../images/about-assets/about-us_background_05.png';
+import storyboardImage_06 from '../../images/about-assets/about-us_background_06.png';
+import storyboardImage_07 from '../../images/about-assets/about-us_background_07.png';
+import storyboardImage_08 from '../../images/about-assets/about-us_background_08.png';
+import storyboardImage_09 from '../../images/about-assets/about-us_background_09.png';
 import {
   motion,
   useScroll,
@@ -37,7 +41,11 @@ function Image({ id }: { id: number }) {
                         id === 2 ? storyboardImage_02 :
                         id === 3 ? storyboardImage_03 :
                         id === 4 ? storyboardImage_04 :
-                        id === 5 ? storyboardImage_04 :
+                        id === 5 ? storyboardImage_05 :
+                        id === 6 ? storyboardImage_06 :
+                        id === 7 ? storyboardImage_07 :
+                        id === 8 ? storyboardImage_08 :
+                        id === 9 ? storyboardImage_09 :
   "https://placehold.co/600x400";
 
   return (
@@ -49,13 +57,15 @@ function Image({ id }: { id: number }) {
 
       <div ref={ref}>
         
-          <img srcSet={currentImage+" 2000w 2000h"}
-          sizes="(max-width: 666px) 2560w,
-                  (max-width: 1399px) 38w,
-                  600px"
-          src={`/src/images/buildings/${id}.png`}
+
+
+          <img srcSet={currentImage+" 2000w"}
+          sizes="(max-width: 666px) 80vw"
+          //src={`/src/images/buildings/${id}.png`}
           alt="placeholder image"
           className="parent"></img>
+
+
         </div>
       {/* <motion.h2 style={{ y }}>{`#00${id}`}</motion.h2> */}
     </section>
@@ -151,7 +161,7 @@ const AboutUs = () => {
 
 
         <>
-          {[1,2,3,4].map((image) => (<Image id={image} />))}
+          {[1,2,3,4,5,6,7,8,9].map((image) => (<Image id={image} />))}
           <motion.div className="progress" style={{ scaleX }} />
 
 

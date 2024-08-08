@@ -77,9 +77,12 @@ const Navigation = () => {
       
       <nav className="navigation" ref={navbar}>
         
+        {(pathname !== ROUTE.ABOUT_US) && (
+
         <div className="navigation-company-name">
            <NavLink activeClassName="navigation-company-name" exact to={ROUTE.ABOUT_US}>STARSOF THELID</NavLink>
         </div>
+        )}
         
         {pathname !== ROUTE.HOME && (
           <ul className="navigation-menu-buttons">
