@@ -31,7 +31,8 @@ const Navigation = () => {
 
   const scrollHandler = () => {
     if (navbar.current && window.screen.width > 480) {
-      if (window.pageYOffset >= 70) {
+      //if navigation is scrolled, otherwise, remove.
+      if (window.scrollY>= 70 || window.pageYOffSet>= 70) {
         navbar.current.classList.add('is-nav-scrolled');
       } else {
         navbar.current.classList.remove('is-nav-scrolled');
@@ -72,8 +73,7 @@ const Navigation = () => {
   }
   return (
     
-    <div>
-      
+
       
       <nav className="navigation" ref={navbar}>
         
@@ -154,7 +154,6 @@ const Navigation = () => {
         </ul>
       </nav>
 
-    </div>
      
   );
 };

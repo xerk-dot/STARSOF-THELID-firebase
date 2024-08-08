@@ -2,6 +2,10 @@ import { useDocumentTitle, useScrollTop } from '../../hooks';
 import React from 'react';
 import { useRef } from "react";
 import { Container } from "react-bootstrap";
+import storyboardImage_01 from '../../images/about-assets/about-us_background_01.png';
+import storyboardImage_02 from '../../images/about-assets/about-us_background_02.png';
+import storyboardImage_03 from '../../images/about-assets/about-us_background_03.png';
+import storyboardImage_04 from '../../images/about-assets/about-us_background_04.png';
 
 import {
   motion,
@@ -28,7 +32,13 @@ function useParallax(value: MotionValue<number>, distance: number) {
 function Image({ id }: { id: number }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, -400);
+  const y = useParallax(scrollYProgress, 400);
+  const currentImage = id === 1 ? storyboardImage_01 :
+                        id === 2 ? storyboardImage_02 :
+                        id === 3 ? storyboardImage_03 :
+                        id === 4 ? storyboardImage_04 :
+                        id === 5 ? storyboardImage_04 :
+  "https://placehold.co/600x400";
 
   return (
     <section>
@@ -36,24 +46,14 @@ function Image({ id }: { id: number }) {
         <img src={`/src/images/buildings/${id}.png`} alt="A London skyscraper" />
       </div> */}
       
-{/*       <img srcSet="https://via.placeholder.com/426x240 426w,
-                  https://via.placeholder.com/640x360 640w,
-                  https://via.placeholder.com/854x480 854w,
-                  https://via.placeholder.com/1280x720 1280w,
-                  https://via.placeholder.com/1920x1080 1920w,
-                  https://via.placeholder.com/2560x1440 2560w"
-          sizes="(max-width: 666px) 2560w,
-                  (max-width: 1399px) 38vw,
-                  535px"
-          src="https://via.placeholder.com/340x182"
-          alt="placeholder image"
-          className="parent"></img> */}
+
       <div ref={ref}>
-          <img srcSet="src/images/about-assets/about-us_background_03.png 2000w 2000h"
+        
+          <img srcSet={currentImage+" 2000w 2000h"}
           sizes="(max-width: 666px) 2560w,
-                  (max-width: 1399px) 38vw,
+                  (max-width: 1399px) 38w,
                   600px"
-          src="https://via.placeholder.com/340x182"
+          src={`/src/images/buildings/${id}.png`}
           alt="placeholder image"
           className="parent"></img>
         </div>
@@ -148,21 +148,18 @@ const AboutUs = () => {
   return (
 
 <>
-    <div>
 
 
         <>
-
-
-          {[1, 2, 3, 4, 5].map((image) => (
-            
-            <Image id={image} />
-          ))}
+          {[1,2,3,4].map((image) => (<Image id={image} />))}
           <motion.div className="progress" style={{ scaleX }} />
+
+
+
         </>
 
-    </div>
 
+{/* 
         <div>
            
             <section>
@@ -174,7 +171,7 @@ const AboutUs = () => {
             </section>
         </div>
 
-
+ */}
         
 
 
@@ -191,23 +188,8 @@ const AboutUs = () => {
 
  */}
 
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
 
+{/* 
       <section>
         
         <div className="banner-desc">
@@ -251,6 +233,9 @@ const AboutUs = () => {
 
         </div>
       </section>
+ */}
+
+
       </>
   );
 };
