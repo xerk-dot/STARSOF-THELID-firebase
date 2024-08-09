@@ -26,6 +26,9 @@ import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss';
 import hidingWhite from '../home/popup-hidingWhite.css'; //this is used when a marker is clicked on, so dont delete this import!
 import {Pins} from '../../components/map-marker/map-marker';
 
+
+import { useSelector, useDispatch } from 'react-redux';
+import { setPopup, closePopup, selectCount} from '../../redux/slice/popupSlice';
 /* 
 import { Link } from 'react-router-dom';
 import { MessageDisplay } from '@/components/common';
@@ -48,6 +51,9 @@ const Home = () => {
   const [popupInfo, setPopupInfo] = useState(null);
 
 
+  const count = useSelector(selectCount);
+  const dispatch = useDispatch();
+  
 
 
 
@@ -71,6 +77,9 @@ const Home = () => {
   return (
       <div> 
         <>
+
+          {count}
+
           <Map
               ref={mapRef}
               initialViewState={{
@@ -101,9 +110,9 @@ const Home = () => {
             {popupInfo && (
               <Popup
                 anchor="center"
-                longitude={Number(popupInfo.longitude)}
-                latitude={Number(popupInfo.latitude)}
-                onClose={() => setPopupInfo(null)}
+                longitude={Number(count[4])}
+                latitude={Number(count[5])}
+                onClose={() => dispatch(closePopup())}
                 closeButton={false}
                 closeOnClick= {false}
                 closeOnMove= {true}

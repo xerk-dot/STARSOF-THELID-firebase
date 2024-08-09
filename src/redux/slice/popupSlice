@@ -1,0 +1,30 @@
+import { createSlice } from '@reduxjs/toolkit'
+
+
+
+export const counterSlice = createSlice({
+  name: 'counter',
+  initialState: {
+    city: '',
+    population: '',
+    image: '',
+    state: '',
+    latitude: 0,
+    longitude: 0,
+  },
+  reducers: {
+    setPopup: (state, action) => {
+      state.longitude += action.payload;
+
+    },
+    closePopup: (state) => {
+      state.longitude = 0;
+    }
+  },
+})
+
+export const { setPopup, closePopup } = counterSlice.actions
+
+export const selectCount = (state) => state.counter.longitude
+
+export default counterSlice.reducer

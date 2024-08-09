@@ -6,6 +6,7 @@ import miscReducer from './miscReducer';
 import productReducer from './productReducer';
 import profileReducer from './profileReducer';
 import userReducer from './userReducer';
+import counterReducer from '../slice/popupSlice';
 
 const rootReducer = {
   products: productReducer,
@@ -15,7 +16,8 @@ const rootReducer = {
   filter: filterReducer,
   users: userReducer,
   checkout: checkoutReducer,
-  app: miscReducer
+  app: miscReducer,
+  counter: counterReducer
 };
 
 export default rootReducer;
